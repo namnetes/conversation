@@ -1,21 +1,3 @@
 Reformuler au mieux en utilisant un vocabulaire soutenu 
 
-Plusieurs problèmes ont été relevés à l’occasion de cette MEP.
-
-
-Les modules COBOL de pagination ont été déployés :
-•	Ayant déjà fait de Storage Violation en production lors de leur activation. MDEVSAP à l’époque avait investigué et vous avait alerté et retourné les éléments qui devait conduire à des corrections.
-•	En outre personne chez SAM et ou CA-GIP n’a été informé cette fois d’un nouvelle tentative
-
-Les modules IR
-•	Nous SAM avons mis en place à votre demande un protocole de test sur CQ qui en autre nous conduit tous les quinze jours à fournir un état des exécution de ces modules en CQ ;
-•	Il était convenu qu’il ne soit pas déployés avant septembre ;
-•	En outre personne chez SAM n’a été informé de cette initiative ;
-
-Le module de gestion des erreur DB2
-•	Ce module appelé quasiment par tous les programmes mettant en œuvre DB2 a été déployé sans que quiconque ne soit informé ni nous chez SAM, ni les DBA ;
-
-Les modules GESPAR
-•	Ces modules correspondent à la version SPITAB DB2 que vous avez développés en lieu et place du produit QUOTIUM il ne peuvent être selon votre expertise de l’époque qu’en développement mais pas en production ;
-•	En conséquence nous avons des packages dont nous ne savons pas trop quoi faire. Une CI/CD intègre une fonction de gestion de l’intégrité et ici le BASELINE RIPPLE dans le jargon Git le retour sur la branche MASTER ne peut se faire que lorsque toutes les installations ont été effectuées avec succès
 
