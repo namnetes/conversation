@@ -1,3 +1,20 @@
 Reformuler au mieux en utilisant un vocabulaire soutenu 
 
 
+Bonjour Joao,
+
+Il y a eu un incident de PRODUCTION un peu avant ton retour de vacances sur une file d'attente WMQ qui se remplissait. Le sujet n'est pas tant WMQ mais plutôt une histoire d'architecture de journalisation PL@NET.
+
+Le problème était que la file WMQ se remplissait mais le consommateur (quie st côté open) était absent !!
+
+
+La journalisation PL@NET ne concerne que le TP CICS PL@NET évidemment.
+Il existe deux solutions de journalisation : Une historique qui passe par le Z sous programme PROLOGUE/EPILOGUE CICS. Une plus moderne qui passe par l'OPEN.
+
+Il faudrait avoir des schémas d'architecture et comprendre comment cela fonctionne.
+les interlocuteurs :
+- Squad Leader OPALE : LOKOTA OMOMBO-PRESTATAIRE JOEL (LCL) joel.lokota-omombo-prestataire@lcl.fr; 
+- Architecte technique LCL : PELLIZZON Lionel (LCL) lionel.pellizzon@lcl.fr; 
+- ancien de SAM qui travaille à Banque en ligne et qui connait bien : DUFAU Alain (LCL) alain.dufau@lcl.fr
+
+Mais si cela t'interesse on en reparle bien entendu
