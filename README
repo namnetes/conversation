@@ -1,15 +1,13 @@
-A reformuler le mieux possible. 
-
 Bonjour Laurent,
 
-J’ai sollicité cette réunion non pas pour le E37 mais pour évoquer les développements de composants JAVA.
+Je vous contacte pour discuter des avancements des composants JAVA plutôt que du point E37.
 
-Dans le cas présent l’erreur survient sur un PDS d’un package dit de STAGING en développement.
-La question de l’allocation se posera de la même façon se posera sur les EXPM utilisés pour atteindre les autres sites et peut-être que les différentes PARLIB devront être surveillées.
+Dans ce contexte, une erreur survient dans un PDS d'un package en développement appelé "STAGING". La question de l'allocation se posera de manière similaire pour les EXPM utilisés pour atteindre les autres sites. Il se pourrait également que nous devions surveiller les différentes PARLIB.
 
-Dans tous les cas deux choses m’interpellent sur le long terme :
-•	Cette façon d’exécuter des classe Java via un BPXBATSL qui prend une PARLIB
-•	Où et comment sont gérés les sources Java et derrière cela la reco IG qui impose d’avoir quand cela est possible le source utilisé ayant permis de produire le binaire
-•	Avec la généralisation des flux XML, JSON sur Z se généralise ce type de développement ( ici il s’agit d’un parser XML )
+De manière générale, deux points suscitent mon intérêt à long terme :
+1. La méthode actuelle d'exécution des classes Java via un processus BPXBATSL qui requiert une PARLIB.
+2. La gestion des sources Java, ainsi que la recommandation IG qui préconise d'avoir accès, lorsque possible, aux sources ayant produit le binaire.
 
-Donc je souhaite construire avec CA-GIP et suivant les recommandations CA-GIP une solution pérenne.
+Avec la montée en puissance des flux XML et JSON sur Z, ce type de développement devient plus courant (comme dans le cas présent avec un analyseur XML).
+
+Mon objectif est donc de collaborer avec CA-GIP et de mettre en place une solution pérenne conformément à leurs recommandations.
