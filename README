@@ -1,1 +1,15 @@
 A reformuler le mieux possible. 
+
+Bonjour Laurent,
+
+J’ai sollicité cette réunion non pas pour le E37 mais pour évoquer les développements de composants JAVA.
+
+Dans le cas présent l’erreur survient sur un PDS d’un package dit de STAGING en développement.
+La question de l’allocation se posera de la même façon se posera sur les EXPM utilisés pour atteindre les autres sites et peut-être que les différentes PARLIB devront être surveillées.
+
+Dans tous les cas deux choses m’interpellent sur le long terme :
+•	Cette façon d’exécuter des classe Java via un BPXBATSL qui prend une PARLIB
+•	Où et comment sont gérés les sources Java et derrière cela la reco IG qui impose d’avoir quand cela est possible le source utilisé ayant permis de produire le binaire
+•	Avec la généralisation des flux XML, JSON sur Z se généralise ce type de développement ( ici il s’agit d’un parser XML )
+
+Donc je souhaite construire avec CA-GIP et suivant les recommandations CA-GIP une solution pérenne.
