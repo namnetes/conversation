@@ -1,13 +1,1 @@
-Bonjour Laurent,
-
-Je vous contacte pour discuter des avancements des composants JAVA plutôt que du point E37.
-
-Dans ce contexte, une erreur survient dans un PDS d'un package en développement appelé "STAGING". La question de l'allocation se posera de manière similaire pour les EXPM utilisés pour atteindre les autres sites. Il se pourrait également que nous devions surveiller les différentes PARLIB.
-
-De manière générale, deux points suscitent mon intérêt à long terme :
-1. La méthode actuelle d'exécution des classes Java via un processus BPXBATSL qui requiert une PARLIB.
-2. La gestion des sources Java, ainsi que la recommandation IG qui préconise d'avoir accès, lorsque possible, aux sources ayant produit le binaire.
-
-Avec la montée en puissance des flux XML et JSON sur Z, ce type de développement devient plus courant (comme dans le cas présent avec un analyseur XML).
-
-Mon objectif est donc de collaborer avec CA-GIP et de mettre en place une solution pérenne conformément à leurs recommandations.
+A reformuler au mieux.
