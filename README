@@ -1,9 +1,3 @@
 A reformuler au mieux en utilisant un vocabulaire soutenu.
 
-(.venv) PS C:\Users\MARCHAND_A\workspace\samweb> Start-Process -NoNewWindow -FilePath "browser-sync" -ArgumentList "start --config bs-config.js"
-Start-Process : Impossible d’exécuter cette commande en raison de l’erreur : %1 n’est pas une application Win32 valide.
-Au caractère Ligne:1 : 1
-+ Start-Process -NoNewWindow -FilePath "browser-sync" -ArgumentList "st ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation : (:) [Start-Process], InvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperationException,Microsoft.PowerShell.Commands.StartProcessCommand
+
