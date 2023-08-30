@@ -1,17 +1,5 @@
 A reformuler au mieux en utilisant un vocabulaire soutenu.
 
-Bonjour Joachim, bonjour Gilles,
 
-Je me saisis de la responsabilité en tant que gestionnaire des environnements, avec plaisir.
-
-Il est à noter que Python 3.8 est actuellement en place sur les systèmes SYSB et SYSR. Cependant, il est impératif de procéder à une mise à niveau vers la version 3.11, étant donné qu'IBM a cessé de fournir un support pour la version précédente. Les démarches en vue de cette mise à niveau sont déjà en cours sur SYSB et SYSR. De même, je vous tiendrai informés dès que ces environnements seront à nouveau opérationnels.
-
-Je vais initier des discussions avec tous nos partenaires, dont LCL, pour aborder la nécessité de créer des répliques des dépôts logiciels Internet. Il est à relever que notre infrastructure Z, tout comme plusieurs autres machines au sein du Groupe, ne dispose pas d'une connectivité Internet. À l'instar de node.js, Python requiert un accès à un référentiel partagé de codes, en l'occurrence le référentiel PyPI, l'Index des paquets Python.
-
-À titre d'illustration, le module communément utilisé "request", essentiel pour les interactions avec les API REST, ainsi que d'autres modules similaires qui exécutent des tâches spécifiques, ne sont pas incorporés dans la distribution standard de Python.
-
-Restant à votre disposition,
-
-[Votre Nom]
 
 
