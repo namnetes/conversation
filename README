@@ -1,3 +1,14 @@
 A reformuler au mieux en utilisant un vocabulaire soutenu.
 
+Bonjour Joachim, bonjour Gilles,
+
+Je prends ma casquette de gestionnaire des environnements 😊
+
+Python 3.8 est installé sur SYSB et SYSR mais il doit être upgradé en 3.11 car plus supporté par IBM.
+L’intervention est en cours sur SYSB, SYSR et sur DEV je vous préviens dès que les environnements seront disponibles.
+
+J’ouvrirai avec l’ensemble des partenaires LCL et + sur la nécessité d’un clone des dépôts logiciels Internet. Notre Z comme de nombreuses machines du Groupe n’ont pas accès à Internet. Tout comme node.js, Python requiert un accès à un dépôt commun de code PyPI · L'Index des paquets Python
+
+Par exemple le module commun « request » nécessaire au API REST n’est pas inclus dans Python pas plus que celui qui calcul l’âge du Capitaine.  
+
 
