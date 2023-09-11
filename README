@@ -1,1 +1,140 @@
+Tu es un expert du développement IBM Mainframe sur z/OS 2.4
+
+Tu dois développer un programme BATCH qui utilise "The EXCI CALL interface" pour appeler un programme CICS
+
+Ci-dessous un programme COBOL que tu dois compléter au niveau du commentaire : * INSERT CALL TO PROGRAM Y1HEL4P TRANSACTION Y14P
+Pour appeler le programme Y1HEL4P en utilsiant "The EXCI CALL interface"
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. Y1EXCIP.
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 W-WHEN-COMPILED           PIC  X(16) VALUE ALL SPACES.
+       01 W-CURRENT-DATE            PIC  X(21) VALUE ALL SPACES.
+       01 WS-USER-TOKEN              PIC S9(8) VALUE ZERO.
+       01 WS-PIPE-TOKEN              PIC S9(8) VALUE ZERO.
+       01 WS-APPLICATION             PIC  X(8) VALUE 'BATCHCLI'.
+       01 WS-TARGET-SYSTEM           PIC  X(8) VALUE 'A05NATTU'.
+       COPY DFHXCPLO.
+       01 WS-PROGID                  PIC  X(8).
+          88 WS-Y1HEL4P              VALUE 'Y1HEL4P '.
+          88 Ws-Y1HEL5P              VALUE 'Y1HEL4P '.
+       01 WS-TRANID                  PIC  X(4).
+          88 W-Y14P                  VALUE 'Y14P'.
+          88 W-Y15P                  VALUE 'Y15P'.
+       01 WS-COMMAREA-LENGTH         PIC S9(8) COMP-5.
+          88 W-Y14P-COMLEN           VALUE 8.
+          88 W-Y15P-COMLEN           VALUE 8.
+       01 WS-DATA-LENGTH             PIC S9(8) COMP-5.
+          88 W-Y14P-DATLEN           VALUE 8.
+          88 W-Y15P-DATLEN           VALUE 8.
+       LINKAGE SECTION.
+       01 LK-PARAMETERS.
+          05 LK-LENGTH               PIC S9(4) COMP-5.
+          05                         PIC  X(1).
+          05 LK-APP                  PIC  X(8).
+          05                         PIC  X(1).
+          05 LK-APPLID               PIC  X(8).
+          05                         PIC  X(1).
+          05 LK-TRANID               PIC  X(4).
+          05                         PIC  X(1).
+          05 LK-PROGID               PIC  X(8).
+       PROCEDURE DIVISION USING LK-PARAMETERS.
+      DDECLARATIVES.
+      D  DEBUG-DECLARATIVES SECTION.
+      D      USE FOR DEBUGGING ON ALL PROCEDURES.
+      D  DEBUG-DECLARATIVES-PARAGRAPH.
+      D      DISPLAY 'Y1EXCIP: ', DEBUG-NAME.
+      DEND DECLARATIVES.
+           MOVE FUNCTION CURRENT-DATE        TO W-CURRENT-DATE.
+           DISPLAY 'Y1EXCIP: CURRENT DATE/TIME '
+                   W-CURRENT-DATE(07:02)
+                   '/'
+                   W-CURRENT-DATE(05:02)
+                   '/'
+                   W-CURRENT-DATE(01:04)
+                   ' AT '
+                   W-CURRENT-DATE(09:02)
+                   ':'
+                   W-CURRENT-DATE(11:02)
+                   ':'
+                   W-CURRENT-DATE(13:02)
+                   '.'
+                   W-CURRENT-DATE(15:02).
+           MOVE FUNCTION WHEN-COMPILED       TO W-WHEN-COMPILED.
+           DISPLAY 'Y1EXCIP: STARTING PROCESSING'.
+           DISPLAY 'Y1EXCIP: COMPILATION DATE '
+                   W-WHEN-COMPILED(07:02)
+                   '/'
+                   W-WHEN-COMPILED(05:02)
+                   '/'
+                   W-WHEN-COMPILED(01:04)
+                   ' AT '
+                   W-WHEN-COMPILED(09:02)
+                   ':'
+                   W-WHEN-COMPILED(11:02)
+                   ':'
+                   W-WHEN-COMPILED(13:02)
+                   '.'
+                   W-WHEN-COMPILED(15:02).
+           DISPLAY 'Y1EXCIP: INITIALIZE THE USER ENVIRONMENT'.
+           CALL 'DFHXCIS'                 USING VERSION-1
+                                                EXCI-RETURN-CODE
+                                                WS-USER-TOKEN
+                                                INIT-USER
+                                                WS-APPLICATION.
+           PERFORM D-CHECK-EXCI            THRU F-CHECK-EXCI.
+           IF EXCI-RESPONSE > ZERO         THEN GOBACK.
+           DISPLAY 'Y1EXCIP: ALLOCATE A SINGLE SESSION OR PIPE'.
+           CALL 'DFHXCIS'                 USING VERSION-1
+                                                EXCI-RETURN-CODE
+                                                WS-USER-TOKEN
+                                                ALLOCATE-PIPE
+                                                WS-PIPE-TOKEN
+                                                WS-TARGET-SYSTEM
+                                                GENERIC-PIPE.
+           PERFORM D-CHECK-EXCI            THRU F-CHECK-EXCI.
+           IF EXCI-RESPONSE > ZERO         THEN GOBACK.
+           DISPLAY 'Y1EXCIP: CONNECT TO ALLOCATED PIPE'.
+           CALL 'DFHXCIS'                 USING VERSION-1
+                                                EXCI-RETURN-CODE
+                                                WS-USER-TOKEN
+                                                OPEN-PIPE
+                                                WS-PIPE-TOKEN.
+           PERFORM D-CHECK-EXCI            THRU F-CHECK-EXCI.
+
+      * INSERT CALL TO PROGRAM Y1HEL4P TRANSACTION Y14P
+
+
+           IF EXCI-RESPONSE > ZERO         THEN GOBACK.
+           DISPLAY 'Y1EXCIP: DISCONNECT AN OPEN PIPE'.
+           CALL 'DFHXCIS'                 USING VERSION-1
+                                                EXCI-RETURN-CODE
+                                                WS-USER-TOKEN
+                                                CLOSE-PIPE
+                                                WS-PIPE-TOKEN.
+           PERFORM D-CHECK-EXCI            THRU F-CHECK-EXCI.
+           IF EXCI-RESPONSE > ZERO         THEN GOBACK.
+           DISPLAY 'Y1EXCIP: DEALLOCATE A PIPE'.
+           CALL 'DFHXCIS'                 USING VERSION-1
+                                                EXCI-RETURN-CODE
+                                                WS-USER-TOKEN
+                                                DEALLOCATE-PIPE
+                                                WS-PIPE-TOKEN.
+           PERFORM D-CHECK-EXCI            THRU F-CHECK-EXCI.
+           IF EXCI-RESPONSE > ZERO         THEN GOBACK.
+           GOBACK.
+       D-CHECK-EXCI.
+           IF EXCI-RESPONSE > ZERO
+              DISPLAY 'Y1EXCIP: CONNECTION NOT ESTABLISHED'
+              DISPLAY 'Y1EXCIP: RESPONSE:'      EXCI-RESPONSE
+              DISPLAY 'Y1EXCIP: REASON:'        EXCI-REASON
+              DISPLAY 'Y1EXCIP: SUB-REASON1:'   EXCI-SUB-REASON1
+              DISPLAY 'Y1EXCIP: SUB-REASON2:'   EXCI-SUB-REASON2
+           END-IF.
+       F-CHECK-EXCI.
+           EXIT.
+ 
+
 
