@@ -1,46 +1,38 @@
-Reformuler au mieux
+Voici un résumé de mes notes, suivi d'une première liste des impacts. En conclusion,
 
+Ce projet vise à déplacer la LPAR de DEV du point de vue réseau, la retirant ainsi du "SYSPLEX réseau de PRODUCTION". Voici les points clés :
 
-Voici mes notes et plus bas une première liste d’impact. Je termine par une conclusion.
+- L'adresse IP reste la même, simplifiant ainsi la gestion des flux.
+- Le basculement est prévu le dimanche 24/9 à partir de 9h00, avec une série d'actions (y compris des tests) sur une période d'environ 4 heures.
+- La liste des participants comprend LCL (représenté par Alan) et FDR (représenté par CA-GIP).
+- Une équipe TEAMS et une équipe AUDIO TEAMS seront déployées pour la journée, avec l'espoir de les maintenir au-delà pour une réactivité accrue les jours suivants.
+- Le projet n'a pas encore été présenté en CAB.
 
-Il s’agit d’un projet qui vise le déplacement d’un point de vu réseau de la LPAR de DEV et ainsi la sortir « du SYSPLEX réseau de PRODUCTION »
+Ensuite, voici une liste des impacts potentiels pour les utilisateurs de l'environnement de développement (DEV) :
 
-•	Même IP donc gestion des flux simplifiés
-•	Bascule le dimanche 24/9 dès 9:00 pour une suite d’actions (dont test) sur une plage de 4 environs
-•	Liste des participants LCL ( pa Alan )
-•	FDR ( pa CA-GIP )
-•	Un CANAL TEAMS et une AUDIO TEAMS sont prévus pour la journée ( j’espère au-delà pour gagner en réactivité les jours suivants )
-•	Le projet n’est pas encore passé en CAB
+- Accès depuis l'émulateur 3270 pour le développement et le débogage.
+- Accès depuis l'émulateur 3270 pour l'administration de ChangeMan, CICS, WMQ, DB2, TWS OPC.
+- Accès depuis l'émulateur 3270 à la LPAR de PROD pour l'administration de ChangeMan, CICS, WMQ, DB2, TWS OPC.
+- Accès depuis IDZ pour le développement et le débogage.
+- Accès depuis IDZ pour les travaux DB2 z/OS (accès direct ou via une passerelle dédiée).
+- Connexion SSH en ligne de commande pour accéder au sous-système USS.
+- Accès à CICS PL@NET, CTG CICS, WAS depuis l'environnement DEV.
+- Utilisation d'OPALE et OXYGENE (assistance de Lionnel requise).
+- Connexions JDBC.
+- Connexion directe ou via la passerelle DB2 depuis un poste Windows (hors IDZ).
+- Interrogation sur l'utilisation des robots et de leur communication via le réseau (assistance de Lionnel requise).
+- Transfert de fichiers FTP, LFTP, CFT, Pélican (vérification de l'existence d'un résiduel nécessaire).
+- Transfert de fichiers XMIT entre LPAR.
+- Utilisation de File Manager pour la copie à distance (actuellement configuré SYSB/DEV – Statut=Utilisé).
+- Question sur la passerelle SGTI (assistance de Lionnel requise).
+- Impacts sur OPTIM (assistance de Francis MAUVEZIN et Frédéric CHANARD requise).
+- Impacts sur WMQ et nos partenaires (assistance de Lionnel requise).
+- Impacts sur CICS et le rebond COPELIA (gestion par les ingénieurs système CICS de CA-GIP).
+- Impacts sur le projet MOBIUS (gestion par le projet CA-GIP en raison de la containerisation et de la consommation de toutes les LPAR).
+- Impacts sur le projet IBM CL/SESSION et le rebond SOLVE (gestion par le projet CA-GIP).
+- Utilisation de Mainview Explorer, notre outil de surveillance du Z.
 
-Voici une liste d’impacts de potentiel consommateur du DEV ?
-
-•	Depuis l’émulateur 3270 : Accès à la LPAR de DEV pour des travaux de développement, DEBUG
-•	Accès à la LPAR de DEV pour l’administration ChangeMan, CICS, WMQ, DB2, TWS OPC
-•	Accès à la LPAR de PROD pour l’administration ChangeMan, CICS, WMQ, DB2, TWS OPC
-•	Depuis IDZ : Accès à la LPAR de DEV pour des travaux de développement, DEBUG
-•	Depuis IDZ : Accès à la LPAR de DEV pour des travaux DB2 z/OS ( Accès direct ou via la passerelle dédié ) 
-•	Accès en ligne de commande SSH pour joindre le sous système USS
-•	CICS PL@NET, CTG CICS, WAS… accès au DEV ( Je sollicite l’aide de Lionnel )
-•	OPALE, OXYGENE ( Je sollicite l’aide de Lionnel )
-•	Connexion JDBC
-•	Hors IDZ : Connexion directe ou depuis la passerelle DB2 depuis un poste Windows
-•	Il existe des robots. Communiquent-ils via le réseau ? ( Je sollicite l’aide de Lionnel )
-•	Transfert de fichier FTP
-•	Transfert de fichier LFTP
-•	Transfert de fichier CFT
-•	Transfert de fichier Pélican ( existe-t-il un résiduel ? )
-•	Transfert de fichier XMIT entre LPAR
-•	Transfert de fichier File Manager ( Copie REMOTE actuellement configuré SYSB/DEV – Statut=Utilisé )
-•	Passerelle SGTI ? ( Je sollicite l’aide de Lionnel )
-•	OPTIM ( Je sollicite l’aide de Francis MAUVEZIN et Frédéric CHANARD )
-•	WMQ et nos partenaires ( Je sollicite l’aide de Lionnel )
-•	CICS et le rebond COPELIA ( pa les ingénieurs système CICS CA-GIP )
-•	Projet MOBIUS ( pa le projet CA-GIP car la solution est containérisée et consomme toutes les LPAR )
-•	Projet IBM CL/SESSION et le rebond SOLVE ( pa le projet CA-GIP )
-•	Mainview Explorer notre outil qui permet de monitorer le Z
-
-Dans tous les cas SAM fais toujours sur une opération critique des tests de livraison et retour arrière avec ChangeMan.
+Dans tous les cas, des tests de livraison et de retour en arrière seront effectués par SAM lors d'opérations critiques avec ChangeMan.
 
 Remarque :
-
-•	Le délais 14 jours environ semble très court au regard de cette première liste d’impacts. Il y a de multiple acteurs et je ne suis pas certains que tous soient mobilisable rapidement un week end surtout s’il y a des partenaires externes.
+Le délai d'environ 14 jours semble très court compte tenu de la liste initiale des impacts. Il implique la mobilisation de nombreux acteurs, y compris des partenaires externes, le week-end, ce qui pourrait poser des défis.
