@@ -1,6 +1,4 @@
 Reformuler au mieux
 
 
-Reformuler au mieux 
-  
- Cette organisation n’est pas la meilleur surtout dans le cadre de la MCO. D’autant que pour la mettre à jour il est nécessaire de prendre contact avec les équipes d’ingé CICS de l’exploitant.Elle n’est utilisée, aujourd’hui, que dans la CD ChangeManCette table devrait, je pense, être maintenue et mise à disposition par l’exploitant. Dit autrement LCL s’occupe du contenu et l’exploitant du contenant
+Cette structure n'est pas optimale, surtout en ce qui concerne la gestion du MCO. En effet, pour la mettre à jour, il est indispensable de collaborer avec les équipes d'ingénierie CICS de l'exploitant. Actuellement, elle n'est utilisée que dans le cadre de CD ChangeMan. Je suggère que cette table soit entretenue et mise à disposition par l'exploitant, ce qui signifie que LCL se chargerait du contenu tandis que l'exploitant serait responsable du contenant.
