@@ -1,0 +1,8 @@
+Ecrire une fonction, chaeck_dsname, BASH appelée depuis le code principal qui doit valider un nom de dataste mainframe. Voici les règles de gestion
+
+le dsname est composé de 1 à 5 alias
+chaque alias est séparé du précédent par un point
+chaque alias alias est composé de 1 à huit caractères
+chaque alias doit commencé par un caractère alphabétique ou avec un caractère #, ou $
+la longueur total du dsname, séparateur compris, ne peut excéder 44 caractères
+
