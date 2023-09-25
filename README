@@ -1,22 +1,18 @@
-Reformuler au mieux
-
 Bonjour,
 
-Ce user sera utilisé dans le cadre de notre outillage ( squad Solutions & Assistance Mainframe LCL ) mis en oeuvre depuis le monde open via les IBM RSE API et ZOWE.
+Ce compte sera utilisé dans le cadre de notre outillage (équipe Solutions & Assistance Mainframe LCL) mis en œuvre depuis l'environnement ouvert via les API IBM RSE et ZOWE.
 
-Un des outils actuel collecte depuis un Job planifié sous OPC la base des USER RACF afin de constituer notre annuaire des Mainframer LCL, ainsi :
+Actuellement, l'un de nos outils collecte les utilisateurs RACF à partir d'un plan de travail planifié sous OPC pour constituer notre annuaire des Mainframers LCL. Voici comment cela est fait :
 
-x = outtrap('users.')                                       
-address tso 'search class(user)'                            
+x = outtrap('utilisateurs.')                                       
+address tso 'rechercher classe(utilisateur)'                            
 x = outtrap('off')                                                                                                     
-say srcname !! ':' users.0 'users are present on the system'
+afficher srcname !! ':' utilisateurs.0 'utilisateurs sont présents sur le système'
 
-Les résultats plus tard seront croisés avec l'AD, BATMAN et Nexthink pour les SD des postes.
+Plus tard, ces résultats seront croisés avec l'Active Directory, BATMAN et Nexthink pour les postes de travail.
 
-Il nous reste a débrancher la collecte des données afin de la rebrancher sur notre serveur Windows en nous appuyant sur ZOWE. Pour cela nous devons pouvoir utiliser ce user technique RACF.
+Il nous reste à déconnecter la collecte des données afin de la rediriger vers notre serveur Windows en utilisant ZOWE. Pour cela, nous devons accorder ce droit RACF au groupe GUDVSAM et attacher ce groupe à l'utilisateur EI8READ.
 
-Pouvez-vous, donner ce droit RACF au groupe GUDVSAM et attaché ce groupe au user EI8READ ?
-
-En plus de résoudre ce problème les membres du groupe GUDVSAM recouvrons ce droit qu'ils possédait il y a encore peu.
+En résolvant ce problème, les membres du groupe GUDVSAM retrouveront les droits qu'ils avaient il n'y a pas longtemps.
 
 Cordialement,
