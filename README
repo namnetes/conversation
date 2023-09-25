@@ -1,1 +1,22 @@
+Reformuler au mieux
 
+Bonjour,
+
+Ce user sera utilisé dans le cadre de notre outillage ( squad Solutions & Assistance Mainframe LCL ) mis en oeuvre depuis le monde open via les IBM RSE API et ZOWE.
+
+Un des outils actuel collecte depuis un Job planifié sous OPC la base des USER RACF afin de constituer notre annuaire des Mainframer LCL, ainsi :
+
+x = outtrap('users.')                                       
+address tso 'search class(user)'                            
+x = outtrap('off')                                                                                                     
+say srcname !! ':' users.0 'users are present on the system'
+
+Les résultats plus tard seront croisés avec l'AD, BATMAN et Nexthink pour les SD des postes.
+
+Il nous reste a débrancher la collecte des données afin de la rebrancher sur notre serveur Windows en nous appuyant sur ZOWE. Pour cela nous devons pouvoir utiliser ce user technique RACF.
+
+Pouvez-vous, donner ce droit RACF au groupe GUDVSAM et attaché ce groupe au user EI8READ ?
+
+En plus de résoudre ce problème les membres du groupe GUDVSAM recouvrons ce droit qu'ils possédait il y a encore peu.
+
+Cordialement,
