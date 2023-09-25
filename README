@@ -1,18 +1,1 @@
-Bonjour,
 
-Ce compte sera utilisé dans le cadre de notre outillage (équipe Solutions & Assistance Mainframe LCL) mis en œuvre depuis l'environnement ouvert via les API IBM RSE et ZOWE.
-
-Actuellement, l'un de nos outils collecte les utilisateurs RACF à partir d'un plan de travail planifié sous OPC pour constituer notre annuaire des Mainframers LCL. Voici comment cela est fait :
-
-x = outtrap('utilisateurs.')                                       
-address tso 'rechercher classe(utilisateur)'                            
-x = outtrap('off')                                                                                                     
-afficher srcname !! ':' utilisateurs.0 'utilisateurs sont présents sur le système'
-
-Plus tard, ces résultats seront croisés avec l'Active Directory, BATMAN et Nexthink pour les postes de travail.
-
-Il nous reste à déconnecter la collecte des données afin de la rediriger vers notre serveur Windows en utilisant ZOWE. Pour cela, nous devons accorder ce droit RACF au groupe GUDVSAM et attacher ce groupe à l'utilisateur EI8READ.
-
-En résolvant ce problème, les membres du groupe GUDVSAM retrouveront les droits qu'ils avaient il n'y a pas longtemps.
-
-Cordialement,
