@@ -1,9 +1,47 @@
-Reformuler de la lacon la plus compréhensible possible. Il s'agit d'évocquer l'encodage et la notion de page de code
+Expliquer pourquoi il y a des erreurs d'affichage des caractères accentués apparaissent lorsuqe le programme java s'execute sur un système IBM Mainframe sous USS ou l'encodage par défaut est IBM-1047.
+Attention le programme est exécuter depuis une fenêtre powershelle sous windows 10 via ssh ainsi
 
-Comme nous le savons, pour la grande catégorie des dispositifs informatiques, les lettres, chiffres et symboles sont représentés sous forme de codes numériques. Ces codes sont des valeurs numériques attribués à chaque caractère pour permettre au système informatique de les comprendre et de les traiter. Ces valeurs numériques sont donc des codes spécifiques. La façon dont ces codes sont attribués aux caractères dépend de quelque chose que l'on appelle la "page de code".
+PS C:\Users\MARCHAND_A\IDzPortable\Workspace\HashCalculator\bin> ssh toto@dev.prodinfo.fr.cly "/usr/lpp/java/current_64/bin/java MD5Hasher"
+emarcha@dev.prodinfo.fr.cly's password:
+Original String: Vous voulez confirmer qu'un fichier a �t� re�u intact ? Comparez les hachages de l'exp�diteur et du destinataire.
+Hash Value: B7542AFC010B783636A225E34479EC8E
 
-Par exemple, sous Windows, le symbole accolade ouvrante '{' correspond à la valeur hexadécimale x'7B', alors que sur notre Mainframe côté MVS ce même symbole correspond à la valeur X'51' et enfin toujours sur le Mainframe mais côté USS il correspond à la valeur X'C0'.
+Le source java est là
 
+import java.nio.charset.Charset;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
+public class MD5Hasher {
 
-Dans le domaine informatique, lettres, chiffres et symboles sont codés sous forme de valeurs numériques pour que les systèmes puissent les interpréter. Ces codes, spécifiques à chaque caractère, dépendent de ce qu'on appelle une "page de code". Par exemple, la façon dont la parenthèse ouvrante '{' est codée varie entre les environnements informatiques, comme Windows, le Mainframe MVS, et le Mainframe USS. Chaque système utilise sa propre page de code pour attribuer des valeurs spécifiques aux caractères.
+    public static void main(String[] args) {
+
+    	String inputString = "Vous voulez confirmer qu'un fichier a été reçu intact ? Comp"
+        		           + "arez les hachages de l'expéditeur et du destinataire.";
+
+        String hashValue = calculateHash(inputString);
+        System.out.println("Original String: " + inputString);
+        System.out.println("Hash Value: " + hashValue.toUpperCase());
+    }
+
+    private static String calculateHash(String input) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("MD5");
+            byte[] encodedHash = digest.digest(input.getBytes(Charset.forName("IBM1147")));
+
+            StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
+            for (byte b : encodedHash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+}
