@@ -1,47 +1,14 @@
-Expliquer pourquoi il y a des erreurs d'affichage des caractères accentués apparaissent lorsuqe le programme java s'execute sur un système IBM Mainframe sous USS ou l'encodage par défaut est IBM-1047.
-Attention le programme est exécuter depuis une fenêtre powershelle sous windows 10 via ssh ainsi
+Lorsque le programme Java s'exécute sur un système IBM Mainframe sous USS avec un encodage par défaut IBM-1047, des erreurs d'affichage des caractères accentués peuvent se produire. Cela est dû à une incompatibilité d'encodage entre le système d'exploitation Windows 10 (d'où est lancée la commande SSH) et le système USS sur le Mainframe.
 
-PS C:\Users\MARCHAND_A\IDzPortable\Workspace\HashCalculator\bin> ssh toto@dev.prodinfo.fr.cly "/usr/lpp/java/current_64/bin/java MD5Hasher"
-emarcha@dev.prodinfo.fr.cly's password:
-Original String: Vous voulez confirmer qu'un fichier a �t� re�u intact ? Comparez les hachages de l'exp�diteur et du destinataire.
-Hash Value: B7542AFC010B783636A225E34479EC8E
+Le problème réside dans le fait que le programme Java utilise l'encodage IBM-1147 pour obtenir les octets à hasher, mais la console de PowerShell sur Windows 10 n'interprète pas correctement cet encodage lors de l'affichage.
 
-Le source java est là
+Pour résoudre ce problème, vous pourriez envisager de convertir le résultat du hachage en une représentation lisible dans l'encodage par défaut de la console Windows. Cependant, notez que cela ne changera pas l'encodage sous-jacent du Mainframe USS. Vous pourriez essayer d'utiliser l'encodage UTF-8 pour l'affichage dans la console Windows, car il est plus largement pris en charge.
 
-import java.nio.charset.Charset;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+Modifiez la partie de l'affichage dans votre programme comme suit :
 
-public class MD5Hasher {
+```java
+System.out.println("Original String: " + new String(inputString.getBytes(Charset.forName("IBM1147")), Charset.defaultCharset()));
+System.out.println("Hash Value: " + new String(hashValue.toUpperCase().getBytes(Charset.forName("IBM1147")), Charset.defaultCharset()));
+```
 
-    public static void main(String[] args) {
-
-    	String inputString = "Vous voulez confirmer qu'un fichier a été reçu intact ? Comp"
-        		           + "arez les hachages de l'expéditeur et du destinataire.";
-
-        String hashValue = calculateHash(inputString);
-        System.out.println("Original String: " + inputString);
-        System.out.println("Hash Value: " + hashValue.toUpperCase());
-    }
-
-    private static String calculateHash(String input) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("MD5");
-            byte[] encodedHash = digest.digest(input.getBytes(Charset.forName("IBM1147")));
-
-            StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
-            for (byte b : encodedHash) {
-                String hex = Integer.toHexString(0xff & b);
-                if (hex.length() == 1) {
-                    hexString.append('0');
-                }
-                hexString.append(hex);
-            }
-
-            return hexString.toString();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-}
+Cela convertit les octets résultants dans l'encodage par défaut de la console Windows, ce qui pourrait améliorer l'affichage des caractères accentués dans la sortie de la console PowerShell.
