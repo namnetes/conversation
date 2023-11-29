@@ -1,14 +1,14 @@
-Lorsque le programme Java s'exécute sur un système IBM Mainframe sous USS avec un encodage par défaut IBM-1047, des erreurs d'affichage des caractères accentués peuvent se produire. Cela est dû à une incompatibilité d'encodage entre le système d'exploitation Windows 10 (d'où est lancée la commande SSH) et le système USS sur le Mainframe.
+public class PlatformChecker {
 
-Le problème réside dans le fait que le programme Java utilise l'encodage IBM-1147 pour obtenir les octets à hasher, mais la console de PowerShell sur Windows 10 n'interprète pas correctement cet encodage lors de l'affichage.
+    public static void main(String[] args) {
+        String os = System.getProperty("os.name").toLowerCase();
 
-Pour résoudre ce problème, vous pourriez envisager de convertir le résultat du hachage en une représentation lisible dans l'encodage par défaut de la console Windows. Cependant, notez que cela ne changera pas l'encodage sous-jacent du Mainframe USS. Vous pourriez essayer d'utiliser l'encodage UTF-8 pour l'affichage dans la console Windows, car il est plus largement pris en charge.
-
-Modifiez la partie de l'affichage dans votre programme comme suit :
-
-```java
-System.out.println("Original String: " + new String(inputString.getBytes(Charset.forName("IBM1147")), Charset.defaultCharset()));
-System.out.println("Hash Value: " + new String(hashValue.toUpperCase().getBytes(Charset.forName("IBM1147")), Charset.defaultCharset()));
-```
-
-Cela convertit les octets résultants dans l'encodage par défaut de la console Windows, ce qui pourrait améliorer l'affichage des caractères accentués dans la sortie de la console PowerShell.
+        if (os.contains("win")) {
+            System.out.println("La plateforme d'exécution est Windows.");
+        } else if (os.contains("unix") || os.contains("linux")) {
+            System.out.println("La plateforme d'exécution est USS (Unix System Services).");
+        } else {
+            System.out.println("La plateforme d'exécution n'est ni Windows ni USS.");
+        }
+    }
+}
