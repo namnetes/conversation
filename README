@@ -1,1 +1,35 @@
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
+public class Md5 {
+
+    public static void main(String[] args) {
+
+       String inputString = "Vous voulez confirmer qu'un fichier a été reçu intact ? Comp"
+                               + "arez les hachages de l'expéditeur et du destinataire.";
+
+        String hashValue = calculateHash(inputString);
+        System.out.println("Original String: " + inputString);
+        System.out.println("Hash Value: " + hashValue);
+    }
+
+    private static String calculateHash(String input) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("MD5");
+            byte[] encodedHash = digest.digest(input.getBytes());
+            StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
+            for (byte b : encodedHash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+}
