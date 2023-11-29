@@ -3,3 +3,7 @@ Reformuler de la lacon la plus compréhensible possible. Il s'agit d'évocquer l
 Comme nous le savons, pour la grande catégorie des dispositifs informatiques, les lettres, chiffres et symboles sont représentés sous forme de codes numériques. Ces codes sont des valeurs numériques attribués à chaque caractère pour permettre au système informatique de les comprendre et de les traiter. Ces valeurs numériques sont donc des codes spécifiques. La façon dont ces codes sont attribués aux caractères dépend de quelque chose que l'on appelle la "page de code".
 
 Par exemple, sous Windows, le symbole accolade ouvrante '{' correspond à la valeur hexadécimale x'7B', alors que sur notre Mainframe côté MVS ce même symbole correspond à la valeur X'51' et enfin toujours sur le Mainframe mais côté USS il correspond à la valeur X'C0'.
+
+
+
+Dans le domaine informatique, lettres, chiffres et symboles sont codés sous forme de valeurs numériques pour que les systèmes puissent les interpréter. Ces codes, spécifiques à chaque caractère, dépendent de ce qu'on appelle une "page de code". Par exemple, la façon dont la parenthèse ouvrante '{' est codée varie entre les environnements informatiques, comme Windows, le Mainframe MVS, et le Mainframe USS. Chaque système utilise sa propre page de code pour attribuer des valeurs spécifiques aux caractères.
