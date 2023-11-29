@@ -1,35 +1,5 @@
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+Reformuler de la lacon la plus compréhensible possible. Il s'agit d'évocquer l'encodage et la notion de page de code
 
-public class Md5 {
+Comme nous le savons, pour la grande catégorie des dispositifs informatiques, les lettres, chiffres et symboles sont représentés sous forme de codes numériques. Ces codes sont des valeurs numériques attribués à chaque caractère pour permettre au système informatique de les comprendre et de les traiter. Ces valeurs numériques sont donc des codes spécifiques. La façon dont ces codes sont attribués aux caractères dépend de quelque chose que l'on appelle la "page de code".
 
-    public static void main(String[] args) {
-
-       String inputString = "Vous voulez confirmer qu'un fichier a été reçu intact ? Comp"
-                               + "arez les hachages de l'expéditeur et du destinataire.";
-
-        String hashValue = calculateHash(inputString);
-        System.out.println("Original String: " + inputString);
-        System.out.println("Hash Value: " + hashValue);
-    }
-
-    private static String calculateHash(String input) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("MD5");
-            byte[] encodedHash = digest.digest(input.getBytes());
-            StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
-            for (byte b : encodedHash) {
-                String hex = Integer.toHexString(0xff & b);
-                if (hex.length() == 1) {
-                    hexString.append('0');
-                }
-                hexString.append(hex);
-            }
-            return hexString.toString();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-}
+Par exemple, sous Windows, le symbole accolade ouvrante '{' correspond à la valeur hexadécimale x'7B', alors que sur notre Mainframe côté MVS ce même symbole correspond à la valeur X'51' et enfin toujours sur le Mainframe mais côté USS il correspond à la valeur X'C0'.
