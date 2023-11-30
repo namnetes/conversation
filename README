@@ -1,3 +1,32 @@
-The Supported Platform Matrix file for ZMF version 8.2.4 is currently unavailable for download.
+A. Workflow de qualification logicielle
 
-Could you please provide information regarding the compatibility of this version with z/OS 2.5? Additionally, if needed, could you outline the procedures for extending the warranty for this OS version?
+Il n'y a pas de cheminement imposé pour un artéfact.
+
+Seulement le passage par l'env CQ est imposé afin de faciliter le contrôle du Workflow 
+
+Ainsi un développeur peut décider de déployer son artéfact en CQ  puis en PROD, comme il peut faire le choix d'aller en TU, puis en IL, puis en CQ et enfin en PROD.
+
+
+
+B. Gestion des feeds
+
+JFrog Artifactory propose 3 feeds (Scratch, Staging et Stable) qui représentent le niveau de maturité des artéfacts. La promotion d'artéfacts d'un feed à un autre respectera les règles suivantes :
+
+1. Un artéfact en sortie de build (avant tout déploiement) est positionné sur la feed Scratch par la CI
+
+2. Une demande de déploiement d'un artéfact en CQ ou KLIF* requiert le passage de la Quality Gate** et l'Audit** avec succès. L'artéfact est alors promu sur la feed Staging. Le CD le prendra depuis le feed Staging (es composants présents sur CQ ou sur KLIF sont ainsi issus d'un artefact qui est sur le feed Staging)
+
+(*) la KLIF est assimilée à une étape de recette dans un environnement dédié avec des données de PROD anonymisées
+
+(**) il faut avoir franchi la Quality gate et l'Audit puisque en théorie un composant qui a été recetté avec succès doit partir en PROD sans être retouché
+
+3. Un artefact objet d'une demande de déploiement en PROD (également en PCER ou en Pré PROD)*** sera promu dans le feed Stable où l sera pris par le CD. Pour être positionné sur la feed stable, l'artefact doit obligatoirement franchir un deuxième Audit avec succès.
+
+(**) L'artéfact en PCER ou Pré-Prod est censé avoir été recetté et ces cibles sont sous ordonnanceur et assimilées à de la PROD
+
+4. Le passage par CQ est obligatoire avant d'aller en Prod, en PCER ou en Pré-PROD
+
+
+
+Des composants présents en TU ou IL sont issus d'un artefact qui est présent sur scratch
+Il n' y a pas d'obligation de franchir la quality gate avec succès pour être déployé dans ces environnements
