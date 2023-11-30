@@ -1,4 +1,9 @@
-Je lance l'exécution d'une commande sur un système distand via une conenxion ssh ainsi :
+Je lance, depuis une console Powershell sous windows 10, l'exécution d'une commande sur un système distans via une connexion ssh ainsi :
 ssh userid@url "commande à exécuter"
 
-les systèmes local et distant n'utilisent pas les mêmes encodages de caractères qui prend en charge la convertion et comment s'opère-t-elle. Est-il également possible de définir la page code souhaité ?
+L'encdoage sur le système distant est EBCDIC IBM-1047.
+Lencodage sur le systeme local est : page de code 850
+
+La commande exécuté est en faite un programme Java qui produit des résultat via des instruction system.out.println()
+Pourquoi le résultat affiché est globalement lisible. Seul les caractères accentués et quelques symboles ne son tpas correctement affiché.
+Pourquoi et comment corriger ?
