@@ -1,9 +1,4 @@
-Je lance, depuis une console Powershell sous windows 10, l'exécution d'une commande sur un système distans via une connexion ssh ainsi :
-ssh userid@url "commande à exécuter"
+Je travaille sur un système Windows 10 21H2 configuré basiquement en français.
 
-L'encdoage sur le système distant est EBCDIC IBM-1047.
-Lencodage sur le systeme local est : page de code 850
-
-La commande exécuté est en faite un programme Java qui produit des résultat via des instruction system.out.println()
-Pourquoi le résultat affiché est globalement lisible. Seul les caractères accentués et quelques symboles ne son tpas correctement affiché.
-Pourquoi et comment corriger ?
+Ecris un mode opératoire, pour grand débutant, très détailler pour configurer la console cmder afin de l'utiliser à la place de cmde.exe, powershell.exe et cygwin.
+A comment par quelle version télécharger mini ou full
