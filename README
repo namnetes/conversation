@@ -1,14 +1,4 @@
-public class PlatformChecker {
+Je lance l'exécution d'une commande sur un système distand via une conenxion ssh ainsi :
+ssh userid@url "commande à exécuter"
 
-    public static void main(String[] args) {
-        String os = System.getProperty("os.name").toLowerCase();
-
-        if (os.contains("win")) {
-            System.out.println("La plateforme d'exécution est Windows.");
-        } else if (os.contains("unix") || os.contains("linux")) {
-            System.out.println("La plateforme d'exécution est USS (Unix System Services).");
-        } else {
-            System.out.println("La plateforme d'exécution n'est ni Windows ni USS.");
-        }
-    }
-}
+les systèmes local et distant n'utilisent pas les mêmes encodages de caractères qui prend en charge la convertion et comment s'opère-t-elle. Est-il également possible de définir la page code souhaité ?
