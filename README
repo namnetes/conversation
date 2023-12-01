@@ -1,1 +1,10 @@
+Fabrice, Marc,
+
+Suite à notre échange.
+
+Je vous confirme que l'on peut partir sur un renouvellement pluri-annuel sur une période de 3 ans qui permettrai peut-être en plus de la suppression du produit de gagner sur la facture globale.
+
+Il faudra revoir à la prochaine itération car à cette date la migration sur la nouvelle solution zDevops devrait être terminée et donc le démontage ChangeMan sera en cours ou sur une trajectoire très proche.
+
+Nous devons toujours anticiper les montées de version ChangeMan qui doivent être synchro avec z/OS, IBM Developer for z/OS (notre IDE de développement) et parfois DB2 en raison de l'utilisation des drivers d'accès. Nous n'avons pas le luxe de prendre certaines décision au pied levé.
 
