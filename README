@@ -104,4 +104,181 @@ Y a-t-il des éléments que vous aimeriez discuter davantage ou clarifier?
 
 Questions qu'il pourrait poser
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+**FMA - Ingénieur Développeur / Support Mainframe**
+
+**Compétences Clés :**
+- Analyse et études d'impact
+- Programmation et Tests (unitaires, intégration, assemblage, performance)
+- Résolution d'anomalies et mise en production
+- Suivi de production et Support N3
+- Rédaction de documents techniques et Formation aux normes et process
+- Adaptation d'outils projet
+
+**Compétences Techniques :**
+- Systèmes d'exploitation: z/OS
+- Langages: COBOL, SQL, JCL
+- SGBDs: DB2, VSAM
+- Outils: SGBDR tools, CICS, CONTROL-M, Changeman, LCM, ENDEVOR
+- Gestion des tests, Gestion de configuration, Qualimétrie, Outil de suivi incidents
+
+**Compétences Méthodologiques :**
+- Cycle en V
+- Méthode Agile
+
+**Diplômes et Formations :**
+- Analyste Programmeur Grands Systèmes IBM (2007)
+- Master Sciences Qualité de l'Air et Lutte contre le Bruit (2006)
+
+**Langues Étrangères :**
+- Anglais (Courant)
+
+### Expériences Professionnelles
+
+**SOCIETE GENERALE - IED/Support Mainframe (Juin 2021 - Janvier 2024)**
+- Projet ISO022, Équipe BizDev - Périmètre Trade, Progiciel IMEX
+- Études techniques et fonctionnelles, DevOps, Gestion des incidents, Support N3
+- Coordination, Installation de mises à jour, Livraison de correctifs
+- Environnement: CONTROL-M, COBOL, DB2, SQL, JCL, TSO, CICS, DEVOPS, Mainframe z/OS, GIT
+- Méthode: Agile
+
+**EURO INFORMATION DEVELOPPEMENTS - CREDIT MUTUEL (Juin 2015 - Octobre 2017)**
+- Projet IED Mainframe, Équipes SEF, Alphacore, SWIFT
+- Mise en place de traitements de cumul, Rédaction de compte-rendus
+- Évolutions de l'application ACTEL, Correction d'anomalies, Maintenance évolutive
+- Formation de nouveaux arrivants
+- Environnement: COBOL, DB2, CICS, JCL, TSO
+- Méthode: Agile
+
+**PACIFICA - CREDIT AGRICOLE (Décembre 2014 - Mai 2015)**
+- Projet IED Mainframe, Dématérialisation des éditions
+- Maintenance évolutive de l'archivage des flots dématérialisés
+- Développement des actes de Refus de Résiliation, Évolution du courrier du produit Post Permis
+- Environnement: Mainframe z/OS
+
+**AG2R (Septembre 2007 - Juin 2012)**
+- Projets: Indexation des cotisations obsèques, GRECCO V1, Code APE Lot 2, Dimensions Gestion, GRECCO Bloc B
+- Tests d'assemblage, Maintenance corrective et évolutive, Études d'impact, Recette
+- Environnement: Mainframe z/OS, COBOL, DB2, CICS, JCL TSO
+- Méthodes: Cycle en V, Agile
+
+### Observations et Points d'Attention
+
+1. **Polyvalence :** Le CV démontre une polyvalence importante avec une variété de projets et une maîtrise des environnements Mainframe.
+
+2. **Méthodologie :** La connaissance du cycle en V et de la méthode Agile est un atout, mais des détails sur l'application de ces méthodologies pourraient être intéressants.
+
+3. **Expérience Étendue :** L'expérience s'étend sur plusieurs années, indiquant une expertise consolidée dans le domaine.
+
+4. **Langues :** La mention de compétence en anglais est un atout dans un contexte international.
+
+5. **Formation Continue :** Des informations sur des formations ou certifications récentes pourraient compléter la vision des compétences.
+
+Globalement, le profil semble solide, mais des entretiens permettront de mieux évaluer l'adéquation avec les besoins spécifiques du poste à pourvoir.
+
+Question qu'il pourrait poser
+
+Le candidat pourrait poser les questions suivantes lors d'un entretien :
+
+1. **Sur le Poste et les Responsabilités :**
+   - Quelles seront mes principales responsabilités dans l'équipe de support et d'accompagnement des développeurs IBM Z?
+   - Comment est organisé le support N3, et quel serait mon rôle spécifique dans ce contexte?
+
+2. **Environnement Technique et Outils :**
+   - Quels sont les outils spécifiques que l'équipe utilise pour la gestion des versions (Changeman, IDZ, MIA) et la gouvernance des environnements?
+   - Pouvez-vous détailler les technologies principales utilisées dans le développement en Python, Java et JavaScript?
+
+3. **Projets Actuels et à Venir :**
+   - Quels sont les projets actuellement en cours au sein de l'équipe?
+   - Y a-t-il des projets futurs prévus pour renforcer l'outillage en Python, Java et JavaScript?
+
+4. **Collaboration et Coordination :**
+   - Comment est organisée la coordination au sein de l'équipe et avec les autres équipes de développement?
+   - En tant qu'exécutant avec une certaine autonomie, comment se déroule la collaboration avec le manager et les autres membres de l'équipe?
+
+5. **Développement Personnel et Formation :**
+   - Y a-t-il des opportunités de formation continue ou de certifications au sein de l'entreprise?
+   - Comment l'entreprise encourage-t-elle le développement professionnel de ses employés?
+
+6. **Culture d'Entreprise :**
+   - Pouvez-vous me parler de la culture d'entreprise et des valeurs qui sont importantes pour l'équipe?
+   - Comment est encouragée l'innovation au sein de l'équipe?
+
+7. **Projets Challenges :**
+   - Pouvez-vous partager un exemple de projet particulièrement complexe ou challengeant que l'équipe a réussi à mener à bien?
+   - Comment l'équipe aborde-t-elle les montées de version des outils tels que Changeman, IDZ et MIA?
+
+8. **Vision à Long Terme :**
+   - Quelle est la vision à long terme de l'équipe en termes de support, développement et gouvernance des environnements IBM Z?
+   - Comment l'équipe contribue-t-elle à l'évolution technologique au sein de l'entreprise?
+
+Ces questions permettront au candidat d'obtenir des informations détaillées sur le poste, l'équipe et l'entreprise, tout en montrant son intérêt et sa préparation pour le rôle.
+
+Question que je poserai 
+
+Voici quelques questions que vous pourriez poser lors d'un entretien :
+
+1. **Sur le Poste et les Responsabilités :**
+   - Quelles seront mes principales responsabilités en tant que manager au sein de l'équipe?
+   - Comment est structurée l'équipe et quelle sera ma place en tant que manager?
+
+2. **Environnement de Travail :**
+   - Comment décririez-vous la culture de travail au sein de l'équipe?
+   - Quel est le style de management privilégié au sein de l'entreprise?
+
+3. **Projets et Objectifs de l'Équipe :**
+   - Pouvez-vous partager quelques projets clés sur lesquels l'équipe travaille actuellement?
+   - Quels sont les objectifs à court et à long terme de l'équipe?
+
+4. **Développement de l'Équipe :**
+   - Comment l'entreprise soutient-elle le développement professionnel de ses employés?
+   - Y a-t-il des opportunités de formation continue pour les membres de l'équipe?
+
+5. **Communication et Collaboration :**
+   - Comment s'organise la communication au sein de l'équipe et avec d'autres départements?
+   - Quels sont les canaux de communication privilégiés pour assurer une collaboration efficace?
+
+6. **Gestion des Performances et des Projets :**
+   - Comment sont évaluées les performances individuelles et collectives au sein de l'équipe?
+   - Quelles sont les mesures mises en place pour assurer le succès des projets sous ma responsabilité?
+
+7. **Défis Actuels et Préoccupations :**
+   - Quels sont les principaux défis auxquels l'équipe est actuellement confrontée?
+   - Y a-t-il des préoccupations ou des problèmes spécifiques que je devrais être conscient en entrant dans le rôle?
+
+8. **Attentes envers le Manager :**
+   - Quelles sont vos attentes envers le nouveau manager pour assurer le succès de l'équipe?
+   - Comment est mesurée la réussite pour le rôle de manager au sein de l'entreprise?
+
+9. **Opportunités d'Innovation :**
+   - Comment l'entreprise encourage-t-elle l'innovation au sein de l'équipe?
+   - Y a-t-il des projets ou des initiatives spécifiques qui visent à stimuler l'innovation?
+
+10. **Relations Interpersonnelles :**
+    - Comment se déroule la collaboration entre les membres de l'équipe?
+    - Quels sont les éléments clés pour maintenir des relations positives au sein de l'équipe?
+
+Ces questions peuvent vous aider à obtenir des informations importantes sur le rôle, l'équipe et l'entreprise, et à montrer votre intérêt pour la position de manager.
+
+-------------------------------------------------------------------------------------------
+
+Diféfrence entre les deux profiles
+
+Les deux profils, Jérôme et FMA, présentent des différences significatives en termes d'expérience, de compétences clés et de domaines d'expertise. Voici une synthèse succincte des distinctions entre les deux :
+
+**Jérôme :**
+- **Expérience :** Plus de 20 ans d'expérience en tant que Consultant Mainframe senior.
+- **Compétences clés :** Large éventail de compétences, de la qualification des besoins à la gestion des incidents, en passant par la coordination des équipes et la gestion du changement.
+- **Compétences techniques :** Maîtrise des systèmes z/OS, Unix, Windows, ainsi que des langages tels que REXX, JCL, C, COBOL, Java, et des outils comme DB2, OPC, ChangeMan, etc.
+- **Expériences professionnelles :** Chef de Projet MOE, Ingénieur Z-DEVOPS Mainframe, Chef de Projet Expert Technique, Chef de Projet et Expert Technique dans diverses entreprises.
+
+**FMA :**
+- **Expérience :** 9 ans d'expérience en tant qu'Ingénieur développeur / Support Mainframe.
+- **Compétences clés :** Axé sur l'analyse, la programmation, les tests, la résolution d'anomalies, et le support N3. Impliqué dans la rédaction de documents techniques et la formation.
+- **Compétences techniques :** Maîtrise des systèmes d'exploitation z/OS, des langages COBOL, SQL, JCL, des SGBD comme DB2 et VSAM, ainsi que des outils tels que CONTROL-M, Changeman, et des méthodes comme le Cycle en V et la Méthode Agile.
+- **Expériences professionnelles :** Ingénieur Développeur/Support Mainframe chez Société Générale, avec des réalisations dans des projets comme la modification des formats de messages SWIFT et la dématérialisation des éditions.
+
+En résumé, Jérôme possède une expérience plus étendue et des compétences variées dans des rôles de gestion de projet et de coordination, tandis que FMA se concentre sur le développement, le support et la gestion de projets spécifiques dans un laps de temps plus court.
+
 
