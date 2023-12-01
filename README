@@ -1,10 +1,7 @@
 Fabrice, Marc,
 
-Suite à notre échange.
+Suite à notre discussion précédente, je souhaite confirmer la possibilité d'opter pour un renouvellement pluriannuel sur une période de trois ans. Cette approche pourrait potentiellement générer des économies sur la facture totale, en plus de la suppression du produit.
 
-Je vous confirme que l'on peut partir sur un renouvellement pluri-annuel sur une période de 3 ans qui permettrai peut-être en plus de la suppression du produit de gagner sur la facture globale.
+Il sera nécessaire de réévaluer lors de la prochaine itération, étant donné que, à ce moment-là, la migration vers la nouvelle solution zDevops devrait être achevée, entraînant le démontage de ChangeMan en cours ou sur le point de l'être.
 
-Il faudra revoir à la prochaine itération car à cette date la migration sur la nouvelle solution zDevops devrait être terminée et donc le démontage ChangeMan sera en cours ou sur une trajectoire très proche.
-
-Nous devons toujours anticiper les montées de version ChangeMan qui doivent être synchro avec z/OS, IBM Developer for z/OS (notre IDE de développement) et parfois DB2 en raison de l'utilisation des drivers d'accès. Nous n'avons pas le luxe de prendre certaines décision au pied levé.
-
+Il est impératif de toujours anticiper les mises à jour de ChangeMan, en veillant à les synchroniser avec z/OS, IBM Developer for z/OS (notre IDE de développement) et parfois DB2 en raison de l'utilisation des drivers d'accès. Nous ne pouvons pas nous permettre de prendre des décisions impulsives dans ce contexte.
