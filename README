@@ -1,3 +1,33 @@
+Voici une fonction Bash simple qui prend un nombre de minutes en paramètre et le convertit en jours, heures et minutes :
+
+```bash
+#!/bin/bash
+
+convertir_en_temps() {
+    local total_minutes="$1"
+
+    # Calculer le nombre de jours
+    jours=$((total_minutes / (24 * 60)))
+
+    # Calculer le nombre d'heures restantes
+    heures=$(( (total_minutes % (24 * 60)) / 60 ))
+
+    # Calculer le nombre de minutes restantes
+    minutes=$((total_minutes % 60))
+
+    # Afficher le résultat
+    echo "$jours jours, $heures heures, $minutes minutes"
+}
+
+# Utilisation de la fonction avec un exemple de nombre de minutes (par exemple, 189176 x 9)
+convertir_en_temps $((189176 * 9))
+```
+
+Adaptez la fonction en fonction de vos besoins spécifiques. Vous pouvez appeler la fonction avec différents nombres de minutes en passant ces valeurs comme argument lors de l'appel de la fonction.
+
+
+
+
 Je suis désolé pour la confusion précédente. Voici les raccourcis clavier disponibles dans l'éditeur COBOL pour IBM Developer for z/OS version 15¹:
 
 - **Ctrl+Space**: Édition
