@@ -1,1 +1,35 @@
-
+Public Sub SaveAttachments()
+Dim objOL As Outlook.Application
+Dim objMsg As Outlook.MailItem
+Dim objAttachments As Outlook.Attachments
+Dim objSelection As Outlook.Selection
+Dim i As Long
+Dim lngCount As Long
+Dim strFile As String
+Dim strFolderpath As String
+Dim strDeletedFiles As String
+  
+Set objOL = CreateObject("Outlook.Application")
+Set objSelection = objOL.ActiveExplorer.Selection
+strFolderpath = "E:\Jointe\"
+  
+For Each objMsg In objSelection
+  
+    Set objAttachments = objMsg.Attachments
+    lngCount = objAttachments.Count
+    If lngCount > 0 Then
+        For i = lngCount To 1 Step -1
+            strFile = strFolderpath & "Tableau_detaille_" & Left(Right(objMsg.Subject, 11), 10) & ".CSV"
+            If objAttachments.Item(i).FileName = "Tableau_detaille.CSV" Then
+                objAttachments.Item(i).SaveAsFile strFile
+            End If
+        Next i
+    End If
+Next
+  
+ExitSub:
+    Set objAttachments = Nothing
+    Set objMsg = Nothing
+    Set objSelection = Nothing
+    Set objOL = Nothing
+End Sub
