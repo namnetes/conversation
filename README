@@ -1,35 +1,36 @@
-Public Sub SaveAttachments()
-Dim objOL As Outlook.Application
-Dim objMsg As Outlook.MailItem
-Dim objAttachments As Outlook.Attachments
-Dim objSelection As Outlook.Selection
-Dim i As Long
-Dim lngCount As Long
-Dim strFile As String
-Dim strFolderpath As String
-Dim strDeletedFiles As String
-  
-Set objOL = CreateObject("Outlook.Application")
-Set objSelection = objOL.ActiveExplorer.Selection
-strFolderpath = "E:\Jointe\"
-  
-For Each objMsg In objSelection
-  
-    Set objAttachments = objMsg.Attachments
-    lngCount = objAttachments.Count
-    If lngCount > 0 Then
-        For i = lngCount To 1 Step -1
-            strFile = strFolderpath & "Tableau_detaille_" & Left(Right(objMsg.Subject, 11), 10) & ".CSV"
-            If objAttachments.Item(i).FileName = "Tableau_detaille.CSV" Then
-                objAttachments.Item(i).SaveAsFile strFile
-            End If
-        Next i
-    End If
-Next
-  
-ExitSub:
-    Set objAttachments = Nothing
-    Set objMsg = Nothing
-    Set objSelection = Nothing
-    Set objOL = Nothing
-End Sub
+Cette macro VBA pour Outlook a pour objectif de sauvegarder les pièces jointes des courriels sélectionnés dans un dossier spécifié sur votre disque dur. Voici une explication détaillée du code :
+
+1. **Déclaration des variables :**
+   - `objOL`: Variable qui représente l'application Outlook.
+   - `objMsg`: Variable qui représente un élément de courrier électronique (MailItem) dans Outlook.
+   - `objAttachments`: Variable qui représente les pièces jointes d'un élément de courrier électronique.
+   - `objSelection`: Variable qui représente la sélection actuelle dans la fenêtre d'exploration d'Outlook.
+   - `i`: Variable de boucle.
+   - `lngCount`: Variable pour stocker le nombre de pièces jointes dans un courriel.
+   - `strFile`: Variable pour stocker le chemin complet du fichier de sortie.
+   - `strFolderpath`: Variable pour stocker le chemin du dossier de destination.
+   - `strDeletedFiles`: Variable pour stocker les noms des fichiers supprimés.
+
+2. **Initialisation des objets :**
+   - `Set objOL = CreateObject("Outlook.Application")`: Crée une instance de l'application Outlook.
+   - `Set objSelection = objOL.ActiveExplorer.Selection`: Obtient la sélection actuelle dans la fenêtre d'exploration.
+
+3. **Boucle principale :**
+   - `For Each objMsg In objSelection`: Parcourt chaque courriel dans la sélection.
+   - `Set objAttachments = objMsg.Attachments`: Obtient les pièces jointes du courriel.
+   - `lngCount = objAttachments.Count`: Obtient le nombre de pièces jointes dans le courriel.
+
+4. **Vérification des pièces jointes :**
+   - `If lngCount > 0 Then`: Vérifie s'il y a des pièces jointes dans le courriel.
+   - `For i = lngCount To 1 Step -1`: Boucle à travers toutes les pièces jointes du courriel (en sens inverse pour éviter des problèmes d'index lors de la suppression).
+
+5. **Sauvegarde des pièces jointes :**
+   - `strFile = strFolderpath & "Tableau_detaille_" & Left(Right(objMsg.Subject, 11), 10) & ".CSV"`: Construit le chemin complet du fichier de sortie en utilisant une partie du sujet du courriel.
+   - `If objAttachments.Item(i).FileName = "Tableau_detaille.CSV" Then`: Vérifie si le nom de la pièce jointe correspond à "Tableau_detaille.CSV".
+   - `objAttachments.Item(i).SaveAsFile strFile`: Sauvegarde la pièce jointe dans le dossier spécifié.
+
+6. **Nettoyage et sortie :**
+   - `ExitSub:`: Marque le début de la section de sortie.
+   - Libération de la mémoire en définissant toutes les variables d'objet sur `Nothing`.
+
+En résumé, cette macro parcourt les courriels sélectionnés, recherche une pièce jointe spécifique ("Tableau_detaille.CSV") dans chaque courriel, puis sauvegarde cette pièce jointe dans un dossier prédéfini sur le disque dur.
