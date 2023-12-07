@@ -1,36 +1,96 @@
-Cette macro VBA pour Outlook a pour objectif de sauvegarder les pièces jointes des courriels sélectionnés dans un dossier spécifié sur votre disque dur. Voici une explication détaillée du code :
-
-1. **Déclaration des variables :**
-   - `objOL`: Variable qui représente l'application Outlook.
-   - `objMsg`: Variable qui représente un élément de courrier électronique (MailItem) dans Outlook.
-   - `objAttachments`: Variable qui représente les pièces jointes d'un élément de courrier électronique.
-   - `objSelection`: Variable qui représente la sélection actuelle dans la fenêtre d'exploration d'Outlook.
-   - `i`: Variable de boucle.
-   - `lngCount`: Variable pour stocker le nombre de pièces jointes dans un courriel.
-   - `strFile`: Variable pour stocker le chemin complet du fichier de sortie.
-   - `strFolderpath`: Variable pour stocker le chemin du dossier de destination.
-   - `strDeletedFiles`: Variable pour stocker les noms des fichiers supprimés.
-
-2. **Initialisation des objets :**
-   - `Set objOL = CreateObject("Outlook.Application")`: Crée une instance de l'application Outlook.
-   - `Set objSelection = objOL.ActiveExplorer.Selection`: Obtient la sélection actuelle dans la fenêtre d'exploration.
-
-3. **Boucle principale :**
-   - `For Each objMsg In objSelection`: Parcourt chaque courriel dans la sélection.
-   - `Set objAttachments = objMsg.Attachments`: Obtient les pièces jointes du courriel.
-   - `lngCount = objAttachments.Count`: Obtient le nombre de pièces jointes dans le courriel.
-
-4. **Vérification des pièces jointes :**
-   - `If lngCount > 0 Then`: Vérifie s'il y a des pièces jointes dans le courriel.
-   - `For i = lngCount To 1 Step -1`: Boucle à travers toutes les pièces jointes du courriel (en sens inverse pour éviter des problèmes d'index lors de la suppression).
-
-5. **Sauvegarde des pièces jointes :**
-   - `strFile = strFolderpath & "Tableau_detaille_" & Left(Right(objMsg.Subject, 11), 10) & ".CSV"`: Construit le chemin complet du fichier de sortie en utilisant une partie du sujet du courriel.
-   - `If objAttachments.Item(i).FileName = "Tableau_detaille.CSV" Then`: Vérifie si le nom de la pièce jointe correspond à "Tableau_detaille.CSV".
-   - `objAttachments.Item(i).SaveAsFile strFile`: Sauvegarde la pièce jointe dans le dossier spécifié.
-
-6. **Nettoyage et sortie :**
-   - `ExitSub:`: Marque le début de la section de sortie.
-   - Libération de la mémoire en définissant toutes les variables d'objet sur `Nothing`.
-
-En résumé, cette macro parcourt les courriels sélectionnés, recherche une pièce jointe spécifique ("Tableau_detaille.CSV") dans chaque courriel, puis sauvegarde cette pièce jointe dans un dossier prédéfini sur le disque dur.
+© 2023 CGI inc. Confidentiel 1
+Expérience sectorielle
+Bancaire, Assurance, Industrie,
+Transport
+Compétences
+Cobol, JCL, DB2, TSO, RDz
+SAP ABAP, SAP ERP, SAP SD
+Netbeans, Php5, JavaScript, Ajax,
+Html5, Css,SQL
+Microsoft Office, Windows
+Langues
+Français, Anglais
+Interne
+Profil
+Sandra compte 5 années d’expérience dans le domaine des technologies de
+l’information dont 1 an en tant que responsable d’applications , 3 ans dans le
+secteur des assurances en tant qu’analyste développeur COBOL et 1 an ½
+dans le secteur du consulting SAP.
+Ses différentes missions lui ont permis d’acquérir du savoir-faire dans la
+conduite de projet, l’analyse, le développement et les tests sur plusieurs
+technologies.
+Sa rigueur, sa curiosité et son sens de l’écoute sont des qualités qui lui
+permettent de s’adapter facilement et rapidement à un nouvel environnement
+et de monter très vite en compétences sur de nouvelles technologies.
+Expérience chez CGI
+BNP/BCEF : Responsable d’applications, 08/2022 à ce jour
+• Suivi et Gestion des projets sur mon périmètre
+• Gestion des incidents
+• Rédaction des spécifications fonctionnelles, techniques et des plans de
+tests
+• Environnement technique. : Idz, Réflexion, COBOL
+EID, Centre de service Assurance (12/2019 à 08/2022)
+Analyste et développeur
+Principales activités :
+• Analyse du besoin client et de la solution à mettre en place
+• Rédaction des spécifications fonctionnelles et techniques
+• Développement, réalisation des tests, livraison de la solution et prise en
+charge des corrections de la solution
+• Encadrement et suivi de l’équipe de développeurs
+• Gestion de la relation client
+Environnement technique. : C# .Net, COBOL, DB2
+EID, Centre de service Assurance (09/2019 à 12/2019)
+Testeur MOA
+Principales activités :
+• Rédaction des tests MOA chez le client
+Sandra K.
+Ingénieur & Responsable d’application Mainframe
+5 ans d’expérience
+© 2023 CGI inc. Confidentiel 2
+Interne
+• Réalisation des tests
+• Formation et encadrement des testeurs
+Environnement technique. : HP Quality Center
+Schmidt Group, Projet OPERA (01/2019 à 09/2019)
+Consultante fonctionnelle
+Principales activités :
+• Résolution des incidents en amont sur le périmètre des ventes (SD)
+• Analyse et proposition de solutions au client sur le périmètre de la logistique et de la vente
+Environnement technique. : SAP SD
+Schmidt Group, Projet OPERA (02/2018 à 12/2018)
+Développeur SAP ABAP
+Principales activités :
+• Analyse des spécifications fonctionnelles
+• Mise en place des spécifications techniques
+• Conception et développement des évolutions en respect avec la spécification fonctionnelle
+• Tests unitaires
+Environnement technique. : SAP Logon, ABAP
+Gestion du périmètre Autorisation de SAP
+Principales activités :
+• Créations/modifications de comptes
+• Gestion des rôles
+Environnement technique. : Hello, SAP GUI
+Expérience Autre
+SAFAR GROUP, Mulhouse (04/2017 à 06/2017)
+Développeur Web – Stage développement WEB : développement d’une application de calcul de coûts en fonction d’un schéma de prix défini entre 2 points de livraison.
+• Conception du cahier de charges
+• Conception des spécifications fonctionnelles et techniques
+• Développement de l’application
+• Réalisation des tests
+Environnement technique. : Netbeans, Php5, JavaScript, Ajax, Html5, Css, SQL
+© 2023 CGI inc. Confidentiel 3
+Interne
+ARMP TOGO, Lomé Togo (05/2016 à 08/2016)
+Développeur Web – Stage développement WEB : développement d’une application web permettant de gérer les différentes interactions entre les opérateurs économiques et l’Autorité de Régularisation des Marchés Publics au Togo.
+• Mise en place du dossier de spécification fonctionnelle et technique
+• Développement de l’application
+• Réalisation des tests
+• Formation du personnel de l’entreprise pour la prise en main de l’application
+Environnement technique. : Php5, JavaScript, Html5, Css, SQL, CODEIGNETER, Netbeans
+Formation
+2018 :
+Master 2, Informatique Mobile et Répartie, Université de Haute Alsace, Mulhouse France
+2017 :
+Master 1, Informatique Mobile et Répartie, Université de Haute Alsace, Mulhouse France
+2016 :
+Licence Informatique, Université de Haute Alsace, Mulhouse France
