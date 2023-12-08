@@ -1,0 +1,41 @@
+Explique de façon très détaillé a un grnad débutant en VBA et VBA pour outlook la macro ci-dessous
+
+Public Sub SaveAttachments_BIBEX()
+    Dim objOL As Outlook.Application
+    Dim objMsg As Outlook.MailItem
+    Dim objAttachments As Outlook.Attachments
+    Dim objSelection As Outlook.Selection
+    Dim i, j As Long
+    Dim lngCount As Long
+    Dim strFile As String
+    Dim strFolderpath As String
+    Dim strDeletedFiles As String
+    
+    Const ATTACHMENT_NAME As String = "PJ0000.TXT"
+     
+      
+    Set objOL = CreateObject("Outlook.Application")
+    Set objSelection = objOL.ActiveExplorer.Selection
+    strFolderpath = "C:\Temp\"
+    
+    j = 0                                'index mail en cours
+    For Each objMsg In objSelection
+        Set objAttachments = objMsg.Attachments
+        lngCount = objAttachments.Count
+        If lngCount > 0 Then
+            For i = lngCount To 1 Step -1
+                j = j + 1
+                strFile = strFolderpath & Left(ATTACHMENT_NAME, 6) & "_" & CStr(j) & ".TXT"
+                If objAttachments.Item(i).FileName = ATTACHMENT_NAME Then
+                    objAttachments.Item(i).SaveAsFile strFile
+                End If
+            Next i
+        End If
+    Next
+      
+ExitSub:
+        Set objAttachments = Nothing
+        Set objMsg = Nothing
+        Set objSelection = Nothing
+        Set objOL = Nothing
+End Sub
