@@ -1,1 +1,32 @@
+Bonjour Gilles,
+
+Pas spécifiquement des lenteurs.
+
+Il y a surtout une très grande méconnaissance du produit encouragée par un certain rejet.
+Dans tous les cas ce sont toujrus les mêmes qui postent des JIR@ et vérification faite avec les DBA DB2 qui remarques d'un point de vue jir@ la même chose.
+
+L’outil s’appuie principalement sur du Java qui n’est pas réputé pour être performant.
+
+IBM Developer for z/OS est un Environnement de développement complet ( IDE ou EDI en français ) qui fournit de nombreuses fonctionnalités donc son temps de démarrage n’est pas instantané sans pour autant être problématique ( 15 secondes sur mon poste )… et cette étape n’est faite qu’une fois par jour car la déconnexion automatique n’intervient qu’après 4 heures d’inactivité.
+
+Nous avons mis en place un Workspace Standard LCL afin de proposer une solution légère de 132 MO…au regard des parfois 2 GIGA constaté 😊
+De plus les développeurs avaient tendance à s’échanger les Workspace donc il y avait propagation d’erreur.
+Nous avons aussi mis en place les des procédures pour récupérer automatiquement le Workspace avec restauration des filtres s’il remplacement un Workspace Existant
+
+Je ne vérifie pas ces soient disant lenteur.
+Il n’est pas possible de comparer un émulateur 3270 qui n’échange qu’un minimum données avec le poste de travail à une solution IDZ.
+Comme tous ces logiciels « cloud » ou distant l’accès réseau est le bottleneck !!
+Nul besoin d’avoir IDZ pour le vérifier Outlook Microsoft Office 3270, Teams sont de bien meilleurs exemple
+
+Les fonctionnalités telques : 
+•	Le debuggeur
+•	La couverture code
+•	L’accès et la manipulation des tables et des procédures stockées
+•	La gestion et l’utilisation de template (cette fonction qui permet d’adosser un copybook à une structure de données fichier via Filenamager pour lire un fichier ou une file WMQ)
+•	L’édition proprement dite de code
+•	La détection de code mort
+•	BMS Editor pour ceux qui manipulent toujours des MAP CICS 3270
+•	Etc.
+
+N’ont pas d’équivalent. IDZ n’est pas la perfection incarnée mais il offre de bien meilleur fonctionnalités que le traditionnel 3270. Chez SAM Loïc et Jean-Jacques sont toujours sous IDZ et ils utilisent tous les deux l’émulateur 3270 intégré.
 
