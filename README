@@ -1,32 +1,11 @@
-Bonjour Gilles,
+Salut Gilles,
 
-Pas spécifiquement des lenteurs.
+Nous ne sommes pas confrontés à des problèmes de lenteur particuliers. Le principal défi réside plutôt dans une méconnaissance importante du produit, souvent accompagnée d'une certaine résistance. En effet, ce sont toujours les mêmes qui soumettent des JIR@, et après vérification avec les DBA DB2, ils constatent la même chose du point de vue des JIR@.
 
-Il y a surtout une très grande méconnaissance du produit encouragée par un certain rejet.
-Dans tous les cas ce sont toujrus les mêmes qui postent des JIR@ et vérification faite avec les DBA DB2 qui remarques d'un point de vue jir@ la même chose.
+L'outil repose principalement sur Java, qui n'a pas la réputation d'être très performant. IBM Developer for z/OS est un environnement de développement complet (IDE), offrant de nombreuses fonctionnalités, donc son temps de démarrage n'est pas instantané, bien que non problématique (15 secondes sur mon poste). De plus, cette étape ne se produit qu'une fois par jour, car la déconnexion automatique n'intervient qu'après 4 heures d'inactivité.
 
-L’outil s’appuie principalement sur du Java qui n’est pas réputé pour être performant.
+Nous avons mis en place un Workspace Standard LCL, une solution légère de 132 MO, comparée aux parfois 2 GIGA constatés 😊. Les développeurs avaient également tendance à échanger les Workspaces, entraînant la propagation d'erreurs. Pour remédier à cela, nous avons mis en place des procédures pour récupérer automatiquement le Workspace avec restauration des filtres s'il remplace un Workspace existant.
 
-IBM Developer for z/OS est un Environnement de développement complet ( IDE ou EDI en français ) qui fournit de nombreuses fonctionnalités donc son temps de démarrage n’est pas instantané sans pour autant être problématique ( 15 secondes sur mon poste )… et cette étape n’est faite qu’une fois par jour car la déconnexion automatique n’intervient qu’après 4 heures d’inactivité.
+Je ne suis pas convaincu par ces prétendues lenteurs. Comparer un émulateur 3270 qui échange un minimum de données avec le poste de travail à une solution IDZ n'est pas pertinent. Comme pour tous ces logiciels « cloud » ou distants, l'accès réseau est le goulot d'étranglement. Inutile d'avoir IDZ pour le vérifier ; Outlook, Microsoft Office 3270, Teams sont de bien meilleurs exemples.
 
-Nous avons mis en place un Workspace Standard LCL afin de proposer une solution légère de 132 MO…au regard des parfois 2 GIGA constaté 😊
-De plus les développeurs avaient tendance à s’échanger les Workspace donc il y avait propagation d’erreur.
-Nous avons aussi mis en place les des procédures pour récupérer automatiquement le Workspace avec restauration des filtres s’il remplacement un Workspace Existant
-
-Je ne vérifie pas ces soient disant lenteur.
-Il n’est pas possible de comparer un émulateur 3270 qui n’échange qu’un minimum données avec le poste de travail à une solution IDZ.
-Comme tous ces logiciels « cloud » ou distant l’accès réseau est le bottleneck !!
-Nul besoin d’avoir IDZ pour le vérifier Outlook Microsoft Office 3270, Teams sont de bien meilleurs exemple
-
-Les fonctionnalités telques : 
-•	Le debuggeur
-•	La couverture code
-•	L’accès et la manipulation des tables et des procédures stockées
-•	La gestion et l’utilisation de template (cette fonction qui permet d’adosser un copybook à une structure de données fichier via Filenamager pour lire un fichier ou une file WMQ)
-•	L’édition proprement dite de code
-•	La détection de code mort
-•	BMS Editor pour ceux qui manipulent toujours des MAP CICS 3270
-•	Etc.
-
-N’ont pas d’équivalent. IDZ n’est pas la perfection incarnée mais il offre de bien meilleur fonctionnalités que le traditionnel 3270. Chez SAM Loïc et Jean-Jacques sont toujours sous IDZ et ils utilisent tous les deux l’émulateur 3270 intégré.
-
+Les fonctionnalités telles que le débogueur, la couverture de code, l'accès et la manipulation des tables et des procédures stockées, la gestion et l'utilisation de templates, l'édition proprement dite de code, la détection de code mort, le BMS Editor pour ceux qui manipulent toujours des MAP CICS 3270, etc., n'ont tout simplement pas d'équivalent. IDZ n'est pas la perfection incarnée, mais il offre bien meilleures fonctionnalités que le traditionnel 3270. Chez SAM, Loïc et Jean-Jacques utilisent tous deux l'émulateur 3270 intégré.
