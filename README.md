@@ -1,1 +1,1 @@
-Il semble y avoir des discussions sur le convertisseur et l'absence de Dev Java actuellement. Il est également noté qu'il y a un point d'attention avec Laurent concernant les progiciels livrés sans passer par ChangeMan, pouvant être intégrés dans la nouvelle CI/CD demain. Est-ce que vous avez des questions spécifiques à ce sujet?
+
