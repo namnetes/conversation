@@ -1,3 +1,5 @@
-Ajoute l'incrémentation d'un compteur i à chaque itération
+La modernité d'une technologie dépend souvent du contexte et des besoins spécifiques. DB2 est un système de gestion de base de données relationnelle (SGBDR) qui est utilisé dans de nombreuses entreprises pour gérer des données de manière structurée. Travailler avec des fichiers peut être plus traditionnel, mais cela dépend également de la façon dont ces fichiers sont gérés.
 
-pb = [line.strip() for line in block.split('\n')]
+En général, les SGBDR comme DB2 offrent des fonctionnalités avancées telles que la gestion des transactions, la normalisation des données, et des requêtes complexes, ce qui peut être plus adapté à des applications nécessitant une gestion sophistiquée des données. Cependant, pour des besoins plus simples ou des applications légères, travailler avec des fichiers peut être suffisant.
+
+Il est important de choisir la technologie en fonction des exigences spécifiques du projet, des compétences de l'équipe et des performances requises.
