@@ -1,9 +1,10 @@
-Cher Fabrice,
+Bonsoir,
 
-Je tenais à partager le bilan de notre Live MOBIUS avec notre communauté Z SNI. Les améliorations notables de l'interface Web et les progrès récents en termes de performance ont été bien accueillis, mais l'accent a été mis sur la jeunesse du produit, un point que nous transmettrons à François SCHAPIRO.
+Je souhaite alerté sur un péoccupation concernant la consommation élevé du progiciel MOBIUS sur notre plateforme Z ( LPAR406 ).
 
-Cependant, nous avons rencontré des anomalies liées à l'inaccessibilité ou à l'absence de certaines SYSOUT d'exécution de production, suscitant une préoccupation significative. Conscient des coûts de licence BMC, je souhaite émettre une alerte et solliciter un arbitrage manœuvrable sur l'arrêt de CTRL-D.
+J'ai sollicité les équipes WLM CA-GIP afin d'avoir quelque éléments chiffrés qui permettent d'éclairer le sujet.  
 
-Toute suggestion ou conseil supplémentaire serait grandement apprécié.
+Bien éviddement cet environnement dédié aux développements et aux tests est très utilisé et parfois sous tension puisque c'est l'idée même d'un tel environnement. Cependant notre suivi de production est aussi réalisé depusi cette LPAR tout comme certaine reprise de données. 
 
-Bien à vous.
+Ces fortes activités MOBIUS augmentent de façon signative cette tension qui conduisent à un passage en mode dégradée
+
