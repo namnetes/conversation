@@ -1,10 +1,11 @@
-Bonsoir,
+Bonjour,
 
-Je souhaite alerté sur un péoccupation concernant la consommation élevé du progiciel MOBIUS sur notre plateforme Z ( LPAR406 ).
+Je souhaite attirer votre attention sur une préoccupation concernant la consommation élevée du progiciel MOBIUS sur notre plateforme Z (LPAR406).
 
-J'ai sollicité les équipes WLM CA-GIP afin d'avoir quelque éléments chiffrés qui permettent d'éclairer le sujet.  
+Afin d'obtenir des éléments chiffrés éclairants sur ce sujet, j'ai sollicité les équipes WLM CA-GIP.
 
-Bien éviddement cet environnement dédié aux développements et aux tests est très utilisé et parfois sous tension puisque c'est l'idée même d'un tel environnement. Cependant notre suivi de production est aussi réalisé depusi cette LPAR tout comme certaine reprise de données. 
+Il est important de souligner que cet environnement dédié aux développements et aux tests est fortement sollicité, par nature. Néanmoins, il est également utilisé pour le suivi de production et certaines reprises de données. Les activités soutenues de MOBIUS contribuent de manière significative à cette pression, entraînant parfois un passage en mode dégradé.
 
-Ces fortes activités MOBIUS augmentent de façon signative cette tension qui conduisent à un passage en mode dégradée
+Toute assistance ou recommandation pour atténuer cette situation serait grandement appréciée.
 
+Cordialement.
