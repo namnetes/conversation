@@ -1,1 +1,1 @@
-
+Actuellement, nous avons trois productions, mais pour un important projet potentiellement sur trois ans, nous envisageons l'ajout d'une quatrième production privée. Pouvez-vous nous fournir les options disponibles dans votre catalogue ainsi que les détails sur la mise à disposition, l'utilisation, et bien sûr, les coûts associés à cette solution ?
