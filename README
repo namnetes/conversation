@@ -1,3 +1,6 @@
+Voici le code de la fonction que je surcharge
+
+
     def __str__(self):
         """
         Affiche tous les attributs de la classe sur la sortie standard, stdout.
@@ -17,3 +20,22 @@
                        f"{item['compiler']}")
 
         return output
+
+
+
+Le problème est que  "self.all_csect = []" est une liste de dictionnaires qui contient :
+
+        - ['name'] le nom de la CSECT
+        - ['address'] Address/Offset de la SCECT
+        - ['size'] la taille du module de la CSECT
+        - ['compiler'] le compilateur utilisé pour générer le module associé à la CSECT
+
+Cette liste de dictionnaire par exemple contient :
+[{'name': 'CEELOCT', 'address': '0007608', 'size': '0000014', 'compiler': 'HIGHLEVEL ASSEMBLER V1R4    '}, {'name': 'CEELOCT', 'address': '0007608', 'size': '0000014', 'compiler': 'HIGHLEVEL ASSEMBLER V1R4    '}]
+
+réécris la focntion de sorte à afficher une ligne ainsi par disctionnaire
+module;loadlib;linkked_date;linked_time;size;amode;rmode; avec ici les éléments du dictionnaire
+
+
+
+
