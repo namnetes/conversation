@@ -1,41 +1,26 @@
-Voici le code de la fonction que je surcharge
+Si je comprends bien, vous souhaitez afficher une ligne pour chaque dictionnaire dans la liste `self.all_csect`, en incorporant les attributs de chaque dictionnaire dans la chaîne résultante. Voici comment vous pourriez modifier votre fonction `__str__` pour réaliser cela :
 
+```python
+def __str__(self):
+    """
+    Affiche tous les attributs de la classe sur la sortie standard, stdout.
+    Chaque attribut est séparé du précédent par un point-virgule.
+    """
+    output = ''
+    for item in self.all_csect:
+        output += (f"{self.module};"
+                   f"{self.loadlib};"
+                   f"{self.linked_date};"
+                   f"{self.linked_time};"
+                   f"{self.size};"
+                   f"{self.amode};"
+                   f"{self.rmode};"
+                   f"{item['name']};"
+                   f"{item['address']};"
+                   f"{item['size']};"
+                   f"{item['compiler']}\n")
 
-    def __str__(self):
-        """
-        Affiche tous les attributs de la classe sur la sortie standard, stdout.
-        Chaque attribut est séparé du précédent par un point-virgule.
-        """
-        output = ''
-        for item in self.all_csect:
-            output += (f"{self.module};"
-                       f"{self.loadlib};
-                       f"{self.linked_date};"
-                       f"{self.linked_time};"
-                       f"{self.size};"
-                       f"{self.amode};"
-                       f"{self.rmode};"
-                       f"{item['name']};"
-                       f"{item['size']};"
-                       f"{item['compiler']}")
+    return output
+```
 
-        return output
-
-
-
-Le problème est que  "self.all_csect = []" est une liste de dictionnaires qui contient :
-
-        - ['name'] le nom de la CSECT
-        - ['address'] Address/Offset de la SCECT
-        - ['size'] la taille du module de la CSECT
-        - ['compiler'] le compilateur utilisé pour générer le module associé à la CSECT
-
-Cette liste de dictionnaire par exemple contient :
-[{'name': 'CEELOCT', 'address': '0007608', 'size': '0000014', 'compiler': 'HIGHLEVEL ASSEMBLER V1R4    '}, {'name': 'CEELOCT', 'address': '0007608', 'size': '0000014', 'compiler': 'HIGHLEVEL ASSEMBLER V1R4    '}]
-
-réécris la focntion de sorte à afficher une ligne ainsi par disctionnaire
-module;loadlib;linkked_date;linked_time;size;amode;rmode; avec ici les éléments du dictionnaire
-
-
-
-
+J'ai ajouté les éléments `item['address']` et `item['compiler']` à la chaîne résultante pour chaque dictionnaire dans `self.all_csect`, et j'ai ajouté un saut de ligne (`\n`) à la fin pour séparer les lignes. Cela devrait générer une ligne distincte pour chaque dictionnaire dans votre liste.
