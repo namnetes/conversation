@@ -1,4 +1,24 @@
 Bonjour, c'est Bing. Je peux vous aider à configurer un terminal Cygwin avec VS Code. 😊
+function nl {
+  param(
+    [Parameter(ValueFromPipeline=$true)]
+    [string[]]$InputObject
+  )
+  begin {
+    $lineNumber = 1
+  }
+  process {
+    foreach ($line in $InputObject) {
+      "{0,6}\t{1}" -f $lineNumber, $line
+      $lineNumber++
+    }
+  }
+}
+
+
+
+
+
 
 Voici les étapes à suivre :
 
@@ -33,3 +53,5 @@ Source : conversation avec Bing, 15/12/2023
 (4) Environnement OCaml - École polytechnique, école d'ingénieur. https://www.enseignement.polytechnique.fr/informatique/INF564/ocaml.html.
 (5) Integrated Terminal in Visual Studio Code. https://code.visualstudio.com/docs/terminal/basics.
 (6) Comment ouvrir le terminal dans VS Code - Autre - Macspots. https://www.macspots.com/how-open-terminal-vs-code.
+
+
