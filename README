@@ -1,1 +1,16 @@
+Il semble que le problème que vous rencontrez soit lié au fait que vous utilisez le même dictionnaire (`csect`) pour tous les éléments de `lm.all_csect`, et il est effacé à la fin de chaque itération. Pour résoudre cela, vous devriez créer un nouveau dictionnaire pour chaque entrée CSECT afin d'éviter d'écraser les valeurs précédentes.
 
+Voici la portion modifiée de votre code :
+
+```python
+# # traitement des csect
+if csect_table_start:
+    csect_entry = {}  # Créer un nouveau dictionnaire pour chaque entrée CSECT
+    csect_entry['name'] = ligne.split()[0]
+    csect_entry['address'] = ligne.split()[2]
+    csect_entry['size'] = ligne.split()[3]
+    csect_entry['compiler'] = ligne[56:84]
+    lm.all_csect.append(csect_entry)
+```
+
+De cette manière, vous créez un nouveau dictionnaire (`csect_entry`) pour chaque CSECT, assurant que les valeurs ne seront pas écrasées dans les itérations suivantes.
