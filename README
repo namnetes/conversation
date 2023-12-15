@@ -1,16 +1,35 @@
-Il semble que le problème que vous rencontrez soit lié au fait que vous utilisez le même dictionnaire (`csect`) pour tous les éléments de `lm.all_csect`, et il est effacé à la fin de chaque itération. Pour résoudre cela, vous devriez créer un nouveau dictionnaire pour chaque entrée CSECT afin d'éviter d'écraser les valeurs précédentes.
+Bonjour, c'est Bing. Je peux vous aider à configurer un terminal Cygwin avec VS Code. 😊
 
-Voici la portion modifiée de votre code :
+Voici les étapes à suivre :
 
-```python
-# # traitement des csect
-if csect_table_start:
-    csect_entry = {}  # Créer un nouveau dictionnaire pour chaque entrée CSECT
-    csect_entry['name'] = ligne.split()[0]
-    csect_entry['address'] = ligne.split()[2]
-    csect_entry['size'] = ligne.split()[3]
-    csect_entry['compiler'] = ligne[56:84]
-    lm.all_csect.append(csect_entry)
+- Installez Cygwin sur votre ordinateur Windows si ce n'est pas déjà fait. Vous pouvez le télécharger depuis [ici](^1^).
+- Ouvrez VS Code et accédez aux paramètres (File > Preferences > Settings ou Ctrl+,).
+- Sélectionnez l'icône Open Settings (JSON) en haut à droite (au même niveau que les onglets).
+- Copiez et collez le code suivant à l'intérieur des accolades de niveau supérieur {} :
+
+```json
+"terminal.integrated.profiles.windows": {
+  "Cygwin": {
+    "path": "C:\\cygwin\\bin\\bash.exe",
+    "args": ["--login"],
+    "env": {"CHERE_INVOKING": "1"}
+  }
+}
 ```
 
-De cette manière, vous créez un nouveau dictionnaire (`csect_entry`) pour chaque CSECT, assurant que les valeurs ne seront pas écrasées dans les itérations suivantes.
+- Remplacez le chemin par celui de votre installation Cygwin (par exemple, "C:\\cygwin64\\bin\\bash.exe" si vous avez la version 64 bits).
+- Enregistrez le fichier JSON et fermez-le.
+- Ouvrez un nouveau terminal intégré (Terminal > New Terminal ou Ctrl+`).
+- Sélectionnez Cygwin dans la liste déroulante du terminal.
+
+Vous devriez maintenant avoir un terminal Cygwin fonctionnel avec VS Code. Vous pouvez utiliser les commandes Linux, git, OCaml, etc. depuis ce terminal. 🎉
+
+J'espère que cela vous a été utile. Si vous avez d'autres questions, n'hésitez pas à me les poser. 😊
+
+Source : conversation avec Bing, 15/12/2023
+(1) VS Code - Cygwin as Integrated Terminal - Stack Overflow. https://stackoverflow.com/questions/46061894/vs-code-cygwin-as-integrated-terminal.
+(2) VS Code-Cygwin en tant que Terminal intégré. https://webdevdesigner.com/q/vs-code-cygwin-as-integrated-terminal-320208/.
+(3) Environnement OCaml - École polytechnique, école d'ingénieur. https://bing.com/search?q=Comment+avoir+un+terminal+cygwin+avec+Vs+Code.
+(4) Environnement OCaml - École polytechnique, école d'ingénieur. https://www.enseignement.polytechnique.fr/informatique/INF564/ocaml.html.
+(5) Integrated Terminal in Visual Studio Code. https://code.visualstudio.com/docs/terminal/basics.
+(6) Comment ouvrir le terminal dans VS Code - Autre - Macspots. https://www.macspots.com/how-open-terminal-vs-code.
