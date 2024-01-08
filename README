@@ -1,0 +1,9 @@
+Explique de facon très détaillé à un débitant ce que son chacune de ces branches.
+A quoi elles servent et comment doit on les utiliser
+
+PS C:\Users\MARCHAND_A\workspace\ytDownloader> git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/development
+  remotes/origin/main
+  remotes/origin/master
