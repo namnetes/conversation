@@ -1,5 +1,5 @@
 Ajoutez dans ce programme la notion de proxy.
-il existe un fichier text qui est dans le répertoire courants qui contient
+il existe un fichier texte, .\proxy.txt, qui est dans le répertoire courants qui contient
 proxy=user:password@url:port
 
 
