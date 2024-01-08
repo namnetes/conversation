@@ -1,51 +1,176 @@
-Peux tu écrire une fonction qui active l'environnement python qui est dans le dossier "$env:USERPROFILE\workspace\" et dont le nom est passer en paramètre.
-Il faut aussi se possitionner dans le répertoire final
+Ajoutez dans ce programme la notion de proxy.
+il existe un fichier text qui est dans le répertoire courants qui contient
+proxy=user:password@url:port
 
-function ActiverEnvironnementPython {
-    param (
-        [string]$nomEnvironnement
+
+
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import logging
+import sys
+import argparse
+import re
+from pytube import YouTube
+
+def setup_logging():
+    import platform
+    if platform.system() == "Windows":
+        logfile = r'$(os.path.expanduser("~")\ytDownloader.log'
+    else:
+        logfile = '/var/log/ytDowloader.log'
+    
+    print(f'log={logfile}')
+    
+    logging.basicConfig(
+      filename=logfile,
+      level=logging.INFO,
+      format='%(asctime)s [%(levelname)s]: %(message)s'
     )
 
-    # Construire le chemin complet de l'environnement Python
-    $cheminEnvironnement = Join-Path $env:USERPROFILE "workspace\$nomEnvironnement"
+def process_file(input_file):
+    with open(input_file, 'r') as file:
+        for line in file:
+            url = line.strip()
+            process_url(url)
 
-    # VÃ©rifier si le rÃ©pertoire existe
-    if (Test-Path $cheminEnvironnement) {
-        # Activer l'environnement Python
-        & "$cheminEnvironnement\Scripts\Activate"
+def process_url(url):
+    if is_valid_url(url):
+        print(f"URL valide : {url}")
+    else:
+        print(f"URL invalide : {url}")
 
-        # Se positionner dans le rÃ©pertoire final
-        Set-Location $cheminEnvironnement
-    } else {
-        Write-Host "L'environnement $nomEnvironnement n'existe pas dans $env:USERPROFILE\workspace\."
-    }
-}
+def is_valid_url(url):
+    try:
+        parsed_url = urlparse(url)
+        return parsed_url.scheme and parsed_url.netloc
+    except ValueError:
+        return False
 
-# Utilisation de la fonction avec le nom de l'environnement Python
-ActiverEnvironnementPython -nomEnvironnement "nom_de_votre_environnement"
+def get_sorted_video_streams(yt):
+    sq = yt.streams.filter(file_extension='mp4', only_video=True)
+    return sq.order_by('resolution').asc()
 
+def get_sorted_audio_streams(yt):
+    sq = yt.streams.filter(file_extension='mp4', only_audio=True)
+    return sq.order_by('bitrate').asc()
 
+def get_highest_video_resolution(yt, user_resolution):
+    sv = get_sorted_video_streams(yt)
+    
+    selected_stream = None
+    for stream in sv:
+        sres = int(re.search(r'\d+',stream.resolution).group())
+        print(f"sres={sres}")
+        if sres >= user_resolution: 
+            selected_stream = stream
+            break
 
-Reformuler et compléter au mieux et le plus politiquement correct le texte ci-dessous. Sachant que la réponse vise à expliquer à quelqu'un pourquoi il ne peut pas être dispensé d'une nouvelle activité de notre planning. Il faudra aussi expliquer
-qu'il s'agit d'un planning d'équipe ou l'équité est une règle importante.
+    return selected_stream
 
-L'idée avec notre organisation est de diluer ces activités qui ne sont pas nécessairement à forte valeur ajoutées. Par nature elles deviennent la tâche quotidienne principale de chacun le moment venu mais elle ne vienne
-pas ajoutées de l'acvité. En revanche elle nous imposent de mettre au second nos autres tâches.
+def get_highest_audio_resolution(yt, user_bitrate):
+    sa = get_sorted_audio_streams(yt)
+    
+    selected_stream = None
+    for stream in sa:
+        sbitrate = int(re.search(r'\d+', stream.abr).group())
+        print(f"sbitrate={sbitrate}")
+        if sbitrate >= user_bitrate: 
+            selected_stream = stream
+            break
 
-L'acivité de "gestion des plates-forme" engendre principalement de l'activité le matin et un peu en fin de journée mais le reste de la journée est assez libre. Cependant en début de mois durant deux jours cette 
-activité matinale peut prendre une heure de plus.
+    return selected_stream
 
+def download_youtube_video():
+    try:
+        setup_logging()
 
-Cher collaborateur,
+        url = input("Entrez l'URL YouTube : ")
+ 
+        yt = YouTube(url)
+ 
+        title = yt.title
+        resolution = yt.streams.get_highest_resolution().resolution
+        print(f"resolution:{resolution}")
+        filesize = yt.streams.get_highest_resolution().filesize
+        # Demander à l'utilisateur d'entrer l'URL YouTube
 
-Nous apprécions grandement votre implication et compréhension envers nos activités. Nous tenons à expliquer que la nouvelle activité planifiée est essentielle pour le bon fonctionnement de notre équipe, et ce, dans un souci d'équité envers tous les membres.
+        mimetype = yt.streams.get_highest_resolution().mime_type
 
-Notre approche organisationnelle vise à répartir judicieusement les activités, surtout celles qui ne sont pas nécessairement à forte valeur ajoutée, afin de minimiser leur impact sur les responsabilités quotidiennes de chacun. Ces activités deviennent, par nature, la principale tâche quotidienne de chacun au moment opportun, mais nous nous efforçons de les intégrer sans surcharger notre emploi du temps.
+        # Obtenir le flux de la résolution la plus élevée
+        yd = yt.streams.get_highest_resolution()
+        # Télécharger la vidéo dans le répertoire courant
+        yd.download()
 
-Plus précisément, l'activité de "gestion des plates-formes" génère principalement une charge de travail le matin et en fin de journée, laissant le reste de la journée relativement libre. Cependant, en début de mois et pendant deux jours, cette activité matinale peut nécessiter une heure supplémentaire.
+        # Enregistrement des informations dans le fichier de log
+        log_message = f"Title: {title}; Resolution: {resolution}; Filesize: {filesize}; Mimetype: {mimetype}"
+        logging.info(log_message)
 
-Nous comprenons que cela peut représenter un ajustement dans votre planning, mais votre coopération précieuse permettra de maintenir l'équité au sein de l'équipe. Merci pour votre compréhension et votre engagement envers notre réussite collective.
+        print("Téléchargement terminé.")
+    except Exception as e:
+        # Enregistrement des erreurs dans le fichier de log
+        logging.error(f"Une erreur s'est produite : {str(e)}")
 
-Cordialement,
-[Votre Nom]
-[Votre Poste]
+if __name__ == "__main__":
+    """
+    TODO: Ajoutez une description
+    """
+    
+    # Mise en place de l'analyseur d'arguments en ligne de commande
+    parser = argparse.ArgumentParser(
+        description="YouTube video downloading tool.",
+        epilog=('''The ytDownloader tool first separately downloads the
+                video and audio streams before merging them with FFmpeg.
+                  
+                By default, the tool prioritizes the best available
+                quality for both video and audio streams.
+                  
+                Please note that the -f/--input_file and URL options are
+                mutually exclusive. Please use only one option at a time.
+               ''')
+    )
+
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("-f", "--input_file",
+                        type=argparse.FileType('r'),
+                        help="path to the file containing URLs to process.")
+    group.add_argument("url",
+                        nargs='?',
+                        help="a YouTube video URL to download.")    
+
+    parser.add_argument("-r", "--resolution",
+                        type=int,
+                        choices=['144', '240', '360', '480', '720', 
+                                 '1080', '1440', '2160', '2880', '4320'],
+                        help="desired video resolution.")
+    parser.add_argument("-b", "--bitrate",
+                        type=int,
+                        choices=['128', '192', '256', '320'],
+                        help="desired audio bitrate.")
+    parser.add_argument("-d", "--dry-run",
+                        action="store_true",
+                        help="display information without downloading.")
+
+    args = parser.parse_args()
+
+    # si aucune résolution ou bitrate n'est fourni, les valeurs maximales
+    # autorisées pour chacun des deux paramètres seront utilisées par défaut.
+    if args.resolution is None:
+        args.resolution = 4320
+
+    if args.bitrate is None:
+        args.bitrate = 320
+
+    if args.input_file:
+        print("L'option -f n'est pas encore disponible !")
+        sys.exit(0)
+
+    url = input("Entrez l'URL YouTube : ")
+    yt = YouTube(url)
+
+    sv = get_highest_video_resolution(yt, args.resolution)
+    sa = get_highest_audio_resolution(yt, args.bitrate)
+    if args.dry-run:
+        print(f"{sv}\n{sa}")
+    else:
+        print("L'option de téléchargement n'est pas encore disponible !")
+
