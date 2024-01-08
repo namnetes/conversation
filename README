@@ -1,11 +1,1 @@
 
-function prompt {
-    $gitBranch = & git rev-parse --abbrev-ref HEAD 2> $null
-    if ($gitBranch) {
-        $gitStatus = & git status --porcelain
-        $branchIndicator = if ($gitStatus) { " * " } else { "" }
-        "$PWD $branchIndicator($gitBranch) "
-    } else {
-        "$PWD "
-    }
-}
