@@ -1,1 +1,3 @@
+Peux tu écrire une focntion qui active l'environnement python qui est dans le dossier "$env:USERPROFILE\workspace\" et dont le nom est passer en paramètre.
+Il faut aussi se possitionner dans le répertoire final
 
