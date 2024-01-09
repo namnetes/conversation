@@ -1,1 +1,67 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from urllib.parse import urlparse
+import socket
+import re
+
+class ProxyManager:
+    """
+    ProxyManager permet de valider et extraire des informations d'une ligne de proxy.
+    """
+
+    def __init__(self):
+        pass
+
+    def get_proxy_info(self, proxy_line):
+        """
+        Valide et extrait les informations du proxy à partir de la ligne spécifiée.
+
+        :param proxy_line: Ligne de proxy à valider et extraire.
+        :return: Dictionnaire contenant les informations du proxy ou None en cas d'erreur.
+        """
+        validation_pattern = re.compile(r'^\s*proxy\s*=\s*(?:(\w+):(\w+)@)?(https?://[a-zA-Z0-9.-]+):(\d+)\s*$', re.IGNORECASE)
+        extraction_pattern = re.compile(r'^\s*proxy\s*=\s*(?:(\w+):(\w+)@)?(https?://[a-zA-Z0-9.-]+):(\d+)\s*$', re.IGNORECASE)
+
+        validation_match = validation_pattern.match(proxy_line)
+        if validation_match:
+            proxy_line = validation_match.group(0)
+            extraction_match = extraction_pattern.match(proxy_line)
+
+            if extraction_match:
+                proxy_dict = {
+                    "Username": extraction_match.group(1),
+                    "Password": extraction_match.group(2),
+                    "URL": extraction_match.group(3),
+                    "Port": extraction_match.group(4)
+                }
+                if check_connection(proxy_dict['URL'], proxy_dict['Port']):
+                    return proxy_dict
+                else:
+                    raise ValueError(f"Echec de connection sur {proxy_dict['URL']}:{proxy_dict['Port']}")
+            else:
+                raise ValueError("Erreur lors de l'extraction. La ligne après validation ne correspond pas à l'expression d'extraction.")
+        else:
+            raise ValueError("La ligne proxy n'est pas valide.")
+
+    def get_hostname(self, url):
+        """
+        Extrait le nom d'hôte à partir de l'URL spécifiée.
+
+        :param url: URL à partir de laquelle extraire le nom d'hôte.
+        :return: Nom d'hôte extrait.
+        """
+        parsed_url = urlparse(url)
+        return parsed_url.netloc
+
+    def check_connection(self, ip, port):
+        try:
+            # Créer une socket TCP
+            s = socket.create_connection((ip, port), timeout=5)
+            # Ferme la connexion
+            s.close()
+            return True
+        except (socket.timeout, ConnectionRefusedError):
+            return False
+
 
