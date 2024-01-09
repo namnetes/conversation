@@ -1,31 +1,31 @@
-Reformuler au mieux en l’enrichir le message. Il s’agit d’un courriel adressé à notre coach agile avec en copie le responsable de tribu.
+Bonjour Eric,
 
+En amont de notre rétrospective qui aurait dû se dérouler en fin d'année, je souhaite partager avec toi les changements significatifs mis en place au sein de notre Squad en ce début d'année 2024.
 
-Eric,
+Nous avions initialement positionné cette rétrospective dans une perspective "Retour vers le Futur", et dans cette optique, nous avons opéré des ajustements stratégiques :
+- La prochaine version d'IDZ sera désormais sous la responsabilité de Jean-Jacques.
+- Loïc prend en charge les activités zDevOps et le développement de notre outillage Open.
+- Joao se concentrera sur les aspects liés à TP/Opale/Habilitation.
+- La gouvernance des environnements HP intègre officiellement notre catalogue de services et sera gérée par une équipe composée de William, Rodrigo, Bruno et Nicolas.
+- Rodrigo explore actuellement des projets inter-Squads, initiants des activités parallèles chez STT.
 
-Avant d’évoquer notre rétrospective qui aurait dû être faite en fin d’année je te propose de te présenter les changements 2024 mis en place au sein de notre Squad.
+Nous avons également introduit quatre plannings avec l'ajout d'un nouveau rôle de Product Owner (PO) :
+- Surveillance de la machine
+- Support de niveau 1
+- Plates-Formes ADT et PCERT
+- PO
 
-Nous avions placé ensemble cette rétrospective dans une perspective de Retour vers le Futur et dans ce cadre-là nous avons rebattu les cartes :
-•	La prochaine version d’IDZ serai prise en charge par Jean-Jacques
-•	Loïc sera en charge des activités zDevOps et du développement de notre outillage Open
-•	Joao se chargera du tout ce qui touche au TP/Opale/Habilitation
-•	La gouvernance des environnements HP fait officiellement son entrée dans notre catalogue de services et sera le sujet d’une équipe de 4 personnes : William, Rodrigo, Bruno et Nicolas
-•	Rodrigo expérimente les travaux inter Squad car il débute des activité en parallèle chez STT
+Chaque activité dans ces plannings est prise en charge en binôme et répartie sur une quinzaine. Nous anticipons une meilleure gestion des activités et des absences, sans collision prévue.
 
-Nous avons 4 plannings dans lesquels un nouveau rôle de PO fait son entrée :
-•	Surveillance de la machine
-•	Support de niveau 1
-•	Plates-Formes ADT et PCERT
-•	PO
+Concernant la gouvernance des environnements, je promeus l'utilisation d'un nouveau canal Teams dédié, créé à cet effet, et encourage l'utilisation de Jir@ Agile, limitant autant que possible les échanges par courrier électronique.
 
-Pour tous ces plannings les activités sont prises en charge en binôme et divisé par quinzaine. Normalement il n’y a pas de collision et normalement la conjugaison des activités et des absences est meilleur.
+Bien que chez Sam, nous n'ayons pas de produits ou de livrables, le rôle du PO prend tout son sens pour s'inscrire pleinement dans le paysage de l'Agilité by LCL. Le PO prend en charge l'organisation et l'animation du Daily, tandis que le binôme s'occupe de la rétrospective. L'objectif est de favoriser l'implication de chacun et de libérer la parole en toute transparence. La maturité et la cohésion de l'équipe nous ont permis de proposer cette nouvelle organisation, avec un regard tourné vers le moyen terme.
 
+Je cherche également à m'effacer tout en conservant mes prérogatives, et pour la prochaine rétro, je suggère que le binôme de janvier, composé de Dominique et Jean-Jacques, se joigne à nous de manière très impliquée. Comme discuté précédemment avec Philippe, je préfère que les principaux intéressés organisent et alimentent la rétro à leur manière. Avec cinq binômes, nous aurons ainsi cinq versions différentes.
 
-Pour la gouvernance des environnements je tente d’influer sur l’utilisation d’un nouveau canal Teams dédié que j’ai créé et sur l’utilisation de Jir@ Agile et dans la mesure du possible de ne pas échanger des courriels.
+Cette démarche vise à instaurer une dynamique participative et à favoriser une diversité de perspectives au sein de notre Squad. 
 
-Même si nous n’avons pas chez Sam de produit et de livrable, le rôle de PO s’explique par l’importance de se fondre dans le paysage de l’Agilité by LCL. Le PO prend en charge l’organisation et l’animation du Daily et le binôme prend en charge l’organisation et l’animation de la rétrospective. L’idée est de permette à chacun de s’impliquer le plus possible et aussi de libérer le plus possible la parôle en toute transparence. C’est la maturité et la cohésion de l’équipe qui me permettent de proposer cette nouvelle organisation avec une cible sur le moyen terme.
+Restant à ton entière disposition pour toute discussion à ce sujet.
 
-L’idée est aussi de m’effacer sans renoncer à mes prérogatives au contraire.
-
-Donc pour cette prochaine rétro je te propose que le binôme de janvier Dominique et Jean-Jacques se joignent à nous et soient très impliqué. Comme nous l’avons évoqué (mais aussi avec Philippe) je n’apprends rien aux rétro (ou au Tribu planning d’ailleurs) je préfère donc que se soit les principaux intéressée qui l’organise et l’alimente à leur façon. Avec 5 binômes nous aurons 5 versions différentes.
-
+Bien à toi,
+[Votre Nom]
