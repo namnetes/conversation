@@ -1,0 +1,13 @@
+def setup_logging():
+    if platform.system() == "Windows":
+        logfile = r'$(os.path.expanduser("~")\ytDownloader.log'
+    else:
+        logfile = '/var/log/ytDowloader.log'
+    
+    print(f'log={logfile}')
+    
+    logging.basicConfig(
+      filename=logfile,
+      level=logging.INFO,
+      format='%(asctime)s [%(levelname)s]: %(message)s'
+    )
