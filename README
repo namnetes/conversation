@@ -1,25 +1,14 @@
-import pytube
 import socks
 import socket
 
-# Configuration du proxy
-proxy_host = 'your_proxy_host'
-proxy_port = your_proxy_port
-proxy_username = 'your_username'  # Si le proxy nÃ©cessite une authentification
-proxy_password = 'your_password'  # Si le proxy nÃ©cessite une authentification
+# Sauvegardez les paramÃ¨tres du socket par dÃ©faut
+default_socket = socket.socket
 
-# Configuration du socket pour utiliser le proxy
-socks.setdefaultproxy(socks.PROXY_TYPE_HTTP, proxy_host, proxy_port, True, proxy_username, proxy_password)
+# Configurez le proxy avec PySocks
+socks.setdefaultproxy(socks.PROXY_TYPE_HTTP, 'your_proxy_host', your_proxy_port, True, 'your_username', 'your_password')
 socket.socket = socks.socksocket
 
-# URL de la vidÃ©o YouTube
-youtube_url = 'https://www.youtube.com/watch?v=your_video_id'
+# ... faire quelque chose avec le socket modifiÃ© ...
 
-# Connexion Ã  la vidÃ©o YouTube via le proxy configurÃ©
-yt = pytube.YouTube(youtube_url)
-
-# Restauration des paramÃ¨tres du socket
-socket.socket = socket.default_socket
-
-# Vous pouvez maintenant utiliser 'yt' pour accÃ©der Ã  diffÃ©rentes propriÃ©tÃ©s de la vidÃ©o
-print("Titre de la vidÃ©o :", yt.title)
+# Restaurez les paramÃ¨tres du socket par dÃ©faut
+socket.socket = default_socket
