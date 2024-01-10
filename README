@@ -1,48 +1,8 @@
-import logging
+Reformuler au mieux
 
-class ProxyManager:
-    def __init__(self, verbose=False):
-        self.verbose = verbose
-
-    def log_info(self, message):
-        if self.verbose:
-            logging.info(message)
-
-    def log_error(self, message):
-        logging.error(message)
-
-    def get_proxy_info(self, proxy_line):
-        validation_pattern = re.compile(r'^\s*proxy\s*=\s*(?:(\w+):(\w+)@)?(https?://[a-zA-Z0-9.-]+):(\d+)\s*$')
-        validation_match = validation_pattern.match(proxy_line)
-
-        if validation_match:
-            extraction_match = validation_match
-
-            proxy_dict = {
-                "Username": extraction_match.group(1),
-                "Password": extraction_match.group(2),
-                "URL": extraction_match.group(3),
-                "Port": extraction_match.group(4)
-            }
-
-            if self.check_connection(proxy_dict['URL'], proxy_dict['Port']):
-                self.log_info(f"Proxy info extracted: {proxy_dict}")
-                return proxy_dict
-            else:
-                self.log_error(f"Connection failed on {proxy_dict['URL']}:{proxy_dict['Port']}")
-                return None
-        else:
-            self.log_error("Invalid proxy line")
-            return None
-
-    # ... (le reste du code)
-
-    def check_connection(self, ip, port):
-        try:
-            s = socket.create_connection((ip, port), timeout=5)
-            s.close()
-            self.log_info(f"Connection successful on {ip}:{port}")
-            return True
-        except (socket.timeout, ConnectionRefusedError):
-            self.log_error(f"Connection failed on {ip}:{port}")
-            return False
+Cet outil a permis au projet de migration COBOL V6 de traiter en masse l’ensemble du patrimoine application COBOL éligible environ 35000 programmes et de multiples copybobol et PAR de JCL que j’ai renoncé à dénombrer. Il prend en charge avec validation de l’utilisateur chacune des étapes du cycle de vie d’un composant logiciel :
+création de package
+checking/checkout du composant
+compilation quand il s’agit d’un prorgamme
+déploiement
+éventuel retour arrière côté CA-GIP mais aussi côté LCL
