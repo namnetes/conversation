@@ -1,7 +1,0 @@
-Exception has occurred: TypeError
-'module' object is not callable
-  File "C:\Users\MARCHAND_A\workspace\ytDownloader\ytDownloader.py", line 35, in read_proxy_info
-    pm = proxy_manager(verbose=True)
-  File "C:\Users\MARCHAND_A\workspace\ytDownloader\ytDownloader.py", line 179, in <module>
-    proxy_info = read_proxy_info().lower()
-TypeError: 'module' object is not callable
