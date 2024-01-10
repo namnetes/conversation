@@ -1,8 +1,1 @@
-Reformuler au mieux
-
-Cet outil a permis au projet de migration COBOL V6 de traiter en masse l’ensemble du patrimoine application COBOL éligible environ 35000 programmes et de multiples copybobol et PAR de JCL que j’ai renoncé à dénombrer. Il prend en charge avec validation de l’utilisateur chacune des étapes du cycle de vie d’un composant logiciel :
-création de package
-checking/checkout du composant
-compilation quand il s’agit d’un prorgamme
-déploiement
-éventuel retour arrière côté CA-GIP mais aussi côté LCL
+Cet outil a facilité le traitement en masse de l'ensemble du patrimoine d'applications COBOL éligible au projet de migration COBOL V6, comprenant environ 35 000 programmes, ainsi que de multiples copybook et PAR de JCL. Il prend en charge toutes les étapes du cycle de vie d'un composant logiciel, y compris la création de package, la vérification/le retrait du composant, la compilation pour les programmes, le déploiement, et éventuellement le retour en arrière du côté CA-GIP ainsi que du côté LCL, le tout avec validation de l'utilisateur.
