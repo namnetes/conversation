@@ -1,6 +1,6 @@
 Ci-dessous le code de mon module proxy_manager.py dont l'objectif est de valider la ligne des infors proxy.
 Peut-être faut t-il définir un constructeur qui prend en parametre les infos proxy qui son td'ailleurs attendu par "def get_proxy_info(self, proxy_line)"
-Peut être faut-il que le construceur retourne None ou le dictionnaire attendu
+Peut être faut-il que le construceur retourne None ou le dictionnaire attendu. Dans tous les cas donne un exemple d'appel depuis le programme.
 
 
 #!/usr/bin/env python
