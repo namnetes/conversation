@@ -1,14 +1,20 @@
-import socks
-import socket
+Reformuler au mieux cette demande
 
-# Sauvegardez les paramÃ¨tres du socket par dÃ©faut
-default_socket = socket.socket
 
-# Configurez le proxy avec PySocks
-socks.setdefaultproxy(socks.PROXY_TYPE_HTTP, 'your_proxy_host', your_proxy_port, True, 'your_username', 'your_password')
-socket.socket = socks.socksocket
+Bonjour et Bonne année 2024.
 
-# ... faire quelque chose avec le socket modifiÃ© ...
 
-# Restaurez les paramÃ¨tres du socket par dÃ©faut
-socket.socket = default_socket
+Le Samedi 24 février 2024 nous serons le site de VVVV en raison d’une intervention planifiée de 8:30 à 19:00.
+
+Pouvons-nous vérifier que l’accès au parking et aux locaux nous soient autorisés et que les équipes sécurité soient prévenues de notre présence.
+
+Quelques informations sur les deux intervenants :
+•	JJJJ
+•	AAAA
+•	Tous deux utilisateurs enregistrés des parkings SSS et GGG
+•	Nous interviendrons de nos bureaux GGG 3-29F et GGG 3-29B
+•	Pouvez-vous également nous confirmer le statut de nos accès au locaux :
+o	AAA : Badge 24/24 toutes l’année
+o	SSS : ?
+
+J’ai bien pris connaissance des conditions d’astreinte le week-end, ci-dessous, nous pouvons aussi intervenir du PCA Energie Seine pour cela il suffit de nous prévenir.
