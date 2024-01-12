@@ -1,4 +1,2 @@
-Reformuler au mieux et de façon poliquement correct
-
 Remarque :
-Si cette date de bascule induit le démontage de CTRL-D il faudra s’assurer que le processus de captation des SYSOUT soit pleinement opérationnel et que la l‘accès aux SYSTOUT soit garanti. En effet certains traitements dont les CUT-OFF ne peuvent rester sans surveillance.
+Dans l'éventualité où la transition à cette date entraînerait le démontage de CTRL-D, il est impératif de garantir la pleine opérationnalité du processus de capture des SYSOUT et de s'assurer d'un accès ininterrompu aux SYSTOUT. En effet, certains traitements, tels que les CUT-OFF, nécessitent une surveillance constante.
