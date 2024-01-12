@@ -1,1 +1,9 @@
-Une approche efficace consiste à diminuer la taille de votre partition principale pour ensuite étendre la partition de récupération. Bien que cela puisse ne pas sembler excitant, le guide est bien conçu et a bien fonctionné pour moi. Actuellement, Microsoft ne propose pas vraiment d'alternative, à part un script PowerShell qui peut sembler un peu douteux.
+Bonjour Philippe,
+
+La communauté Z SNI a été tenu informée et Loïc a organisé « un Live » sur MOBIUS.
+(cf. comm au projet MOBIUS)
+
+A ce stade : nous remontons les anomalies au fil de l’eau et validons les correctifs dès qu’il sont mis à disposition.
+Nous avons aussi formuler une demande (et nous attendons le retour) visant à déplacer les jobs AT* vers 4:00 ou 5:00 car ils sont beaucoup trop consommateur.
+
+Attends tu autre chose de nous ?
