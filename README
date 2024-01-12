@@ -1,5 +1,1 @@
-Reformuler au mieux 
-
-
-Comme évoqué en réunion quand j’ai abordé cette question: Pilote et Géné ne sont pas sur le même fuseau horaire et le décalage peut-être de + 1mois
-La maj des environnements iso prod est faite après la Géné pas avant. J’ai aussi indiqué qu’il faut prévoir un backout revert au moment du pilote en cas de problème donc il n’y aura pas de géné. Il faut aussi prévoir que la date de géné soit modifiable
+Comme mentionné lors de la réunion lorsque j'ai soulevé cette question : Pilote et Général ne se trouvent pas dans le même fuseau horaire, entraînant un décalage potentiel d'un mois. La mise à jour des environnements iso prod intervient après la Général, pas avant. J'ai également souligné la nécessité de prévoir une procédure de retour en arrière (backout revert) lors du pilote en cas de problème, éliminant ainsi la nécessité d'une génération. Il est également essentiel de prendre en compte la possibilité de modifier la date de la génération.
