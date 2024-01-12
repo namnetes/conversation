@@ -1,2 +1,1 @@
-Remarque :
-Dans l'éventualité où la transition à cette date entraînerait le démontage de CTRL-D, il est impératif de garantir la pleine opérationnalité du processus de capture des SYSOUT et de s'assurer d'un accès ininterrompu aux SYSTOUT. En effet, certains traitements, tels que les CUT-OFF, nécessitent une surveillance constante.
+
