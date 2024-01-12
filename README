@@ -1,7 +1,4 @@
-Salut Philippe,
+Reformuler au mieux et de façon poliquement correct
 
-La communauté Z SNI a été mise au courant, et Loïc a orchestré un événement en direct sur MOBIUS (cf. communication sur le projet MOBIUS).
-
-Actuellement, nous signalons les anomalies en cours et approuvons les correctifs dès qu'ils sont disponibles. Nous avons également soumis une demande (et attendons une réponse) pour déplacer les tâches AT* vers 4h00 ou 5h00 car elles sont excessivement consommatrices.
-
-Y a-t-il autre chose que tu attends de notre part ?
+Remarque :
+Si cette date de bascule induit le démontage de CTRL-D il faudra s’assurer que le processus de captation des SYSOUT soit pleinement opérationnel et que la l‘accès aux SYSTOUT soit garanti. En effet certains traitements dont les CUT-OFF ne peuvent rester sans surveillance.
