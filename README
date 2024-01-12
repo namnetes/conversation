@@ -1,7 +1,1 @@
-Une solution efficace qui conduit à réduire la taille de sa participation principale afin de ensuite d'agrandir la partition de récupération. Dit comme ça c'est pas fun 
-
-Triste
-
-... mais le guide est bien fait et cela à fonctionné pour moi. Pour l'heure Microsoft ne propose pas vraiment d'autre alternative exception fait d'un script PowerShell plus ou moins douteux je trouve.
-
-
+Une approche efficace consiste à diminuer la taille de votre partition principale pour ensuite étendre la partition de récupération. Bien que cela puisse ne pas sembler excitant, le guide est bien conçu et a bien fonctionné pour moi. Actuellement, Microsoft ne propose pas vraiment d'alternative, à part un script PowerShell qui peut sembler un peu douteux.
