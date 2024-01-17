@@ -4,7 +4,7 @@ Philippe,
 
 Merci pour ce retour et ces explications.
 
-Demain quand CTRL-D sera démonté il sera unqiuement possible d'être informé de ce problème d'indexation/Perte que l'orsque l'utilisateur tentera d'accéder à la SYSOUT.
+Demain quand CTRL-D sera démonté ilnous serons informé bien tardivement de ce problème d'indexation/Perte.
 
-Est-il possible de mettre en place une solution de sécurisation en par exemple en référencant les jobs exécutés vs les Jobs indexé Mobius ?
-En outre si je découvre qu'un Job non indexé il y a 3 mois (un trimestriel) don cinnaccesible sera-t-il possible de ré-indexé pour l'intégrer à posteri dans Mobius ?
+Quelle stratégie pourrions-nous évoquer avec l'éditeur afin de mettre en place un traitement de sécurisation de ce processus processus d'indexation (sysout produite vs sysout indéxés) ? 
+Serons-nous dans l'avenir en capactité de ré-indexé une SYSOUT annuelle d'il y a environ an ?
