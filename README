@@ -1,9 +1,10 @@
-Cher(e) Directeur/Directrice,
+Reformuler au mieux et le plus politiquement correct.
 
-J'espère que ce message vous trouve bien. Ce matin, un nouvel incident lié à Mobius a été porté à ma connaissance. Ce qui m'inquiète particulièrement n'est pas simplement l'incident en lui-même, mais sa nature, notamment la perte de deux sysouts de production. Cela devient d'autant plus critique dans le contexte de notre transition imminente et la cessation de Control-d qui en découle.
+Philippe,
 
-À l'heure actuelle, la fiabilité devient un axe prioritaire pour moi, peut-être même plus que les performances. Je suis ouvert(e) à discuter de ce sujet plus en détail et à explorer des solutions pour renforcer la robustesse de notre système.
+Merci pour ce retour et ces explications.
 
-Bien cordialement,
+Demain quand CTRL-D sera démonté il sera unqiuement possible d'être informé de ce problème d'indexation/Perte que l'orsque l'utilisateur tentera d'accéder à la SYSOUT.
 
-[Votre Nom]
+Est-il possible de mettre en place une solution de sécurisation en par exemple en référencant les jobs exécutés vs les Jobs indexé Mobius ?
+En outre si je découvre qu'un Job non indexé il y a 3 mois (un trimestriel) don cinnaccesible sera-t-il possible de ré-indexé pour l'intégrer à posteri dans Mobius ?
